@@ -195,9 +195,9 @@ export default function Home() {
           <div className="bg-gray-700 p-8 rounded-lg shadow-md max-w-2xl mx-auto">
             <div className="flex flex-col items-center space-y-6">
               <div className="text-center">
-                <h3 className="text-2xl font-semibold mb-2 text-gray-100">Let's Connect</h3>
+                <h3 className="text-2xl font-semibold mb-2 text-gray-100">Let&apos;s Connect</h3>
                 <p className="text-lg text-gray-300">
-                  We're excited to hear from you and discuss how we can help with your project.
+                  We&apos;re excited to hear from you and discuss how we can help with your project.
                 </p>
               </div>
               <div className="flex items-center space-x-4">
