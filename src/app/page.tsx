@@ -8,28 +8,28 @@ const teamMembers = [
     role: "Co-founder",
     linkedin: "https://www.linkedin.com/in/ibadski/",
     bio: "Having worked for 5 years in the Software Development industry, I am now very excited to work on something of my own. All the process and issues I have learned in my career here I try to create processes which resolves them in the first place.",
-    profilePic: "https://media.licdn.com/dms/image/v2/D4D03AQHOFCYfofmHjA/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1718453820686?e=1730332800&v=beta&t=i0KAEJu7uWFWeoIjZrP9vPX19lWKXrn8PBL92jezj-Y"
+    profilePic: "https://media.licdn.com/dms/image/v2/D4D03AQHOFCYfofmHjA/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1718453820686?e=1759968000&v=beta&t=Mg1anakchhNENC5BqjitShEaLfe1NIeVOhMrqSg-wEw"
   },
   {
     name: "Tanzeel Ur Rahman",
     role: "Advisor",
     linkedin: "https://www.linkedin.com/in/tanxeel/",
     bio: "Currently working at Amazon as SDE3. Team player, Leader, Persistent, Passionate, Analytical and Problem Solver. I have a passion for software engineering, with a strong academic background and an outstanding track record of over 15 years leading the development of software solutions.",
-    profilePic: "https://media.licdn.com/dms/image/v2/C4E03AQF3w5tFaK1aFA/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1517712057723?e=1730332800&v=beta&t=NFgzSh_aduopOGTYH_PLypH_oXCmAPOqN5YgFDUoYac"
+    profilePic:"https://media.licdn.com/dms/image/v2/C4E03AQF3w5tFaK1aFA/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1517712057780?e=1759968000&v=beta&t=pfH7Le5YF1N7CErTrlaG5BJkmp9YNhMlOmPNWBSk6fo"
   },
   {
     name: "Zilay Huda",
     role: "Software Engineer",
     linkedin: "https://www.linkedin.com/in/zilehuda/",
     bio: "An experienced Software Engineer with a demonstrated history of working in the information technology and services industry. ~5 years of experience in the design/development of Backend systems and APIs/Services for FMCGs to startups.",
-    profilePic: "https://media.licdn.com/dms/image/v2/D4D03AQE2Zi4iQsPn8Q/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1718623199646?e=1730332800&v=beta&t=T2vLkW2dHQ-CPJENl81jnLlip68A76WiUm0IxE4sV3k"
+    profilePic: "https://media.licdn.com/dms/image/v2/D4D03AQE2Zi4iQsPn8Q/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1718623199646?e=1759968000&v=beta&t=FJiliHPLEYRMY-zphAuVDpKDHxss7tTQWELI6uvbMII"
   },
   {
     name: "Muhammad Talha",
     role: "Data Analyst",
     linkedin: "https://www.linkedin.com/in/mohammad-talha-datadaily/",
     bio: "As a Data Analyst with extensive experience in machine learning and data visualization, I excel at turning complex data into actionable insights to drive strategic business decisions. Currently, I lead cross-functional teams to optimize production processes and enhance operational efficiency using data-driven strategies.",
-    profilePic: "https://media.licdn.com/dms/image/v2/D4D03AQGyjt5YswfZcw/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1670431143200?e=1730332800&v=beta&t=AYD9ATWD4yLDmm7RJlztmmb1ZTszl1LnY0gLJGwy7oA"
+    profilePic: "https://media.licdn.com/dms/image/v2/D4D03AQEI8_wOdyOJlA/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1729431760222?e=1759968000&v=beta&t=xtGz4MhrIbt3MHv8y7TDZhJdsSp6dm0A9X-B9JtRIiw"
   }
 ];
 
