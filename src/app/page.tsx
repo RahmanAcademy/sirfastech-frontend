@@ -1,6 +1,13 @@
-"use client";
-import Image from "next/image";
-import Testimonials from './components/Testinomials'; // Add this import
+"use client"
+
+import { Button } from "@/components/ui/button"
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel"
+import { Mail, Phone, Linkedin, Code, Brain, Users, Database, ExternalLink } from "lucide-react"
+import Image from "next/image"
+import Testimonials from "@/app/components/Testinomials"
+import { useEffect, useState } from "react"
 
 const teamMembers = [
   {
@@ -8,240 +15,437 @@ const teamMembers = [
     role: "Co-founder",
     linkedin: "https://www.linkedin.com/in/ibadski/",
     bio: "Having worked for 5 years in the Software Development industry, I am now very excited to work on something of my own. All the process and issues I have learned in my career here I try to create processes which resolves them in the first place.",
-    profilePic: "https://media.licdn.com/dms/image/v2/D4D03AQHOFCYfofmHjA/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1718453820686?e=1759968000&v=beta&t=Mg1anakchhNENC5BqjitShEaLfe1NIeVOhMrqSg-wEw"
+    profilePic:
+      "https://media.licdn.com/dms/image/v2/D4D03AQHOFCYfofmHjA/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1718453820686?e=1759968000&v=beta&t=Mg1anakchhNENC5BqjitShEaLfe1NIeVOhMrqSg-wEw",
   },
   {
     name: "Tanzeel Ur Rahman",
     role: "Advisor",
     linkedin: "https://www.linkedin.com/in/tanxeel/",
     bio: "Currently working at Amazon as SDE3. Team player, Leader, Persistent, Passionate, Analytical and Problem Solver. I have a passion for software engineering, with a strong academic background and an outstanding track record of over 15 years leading the development of software solutions.",
-    profilePic:"https://media.licdn.com/dms/image/v2/C4E03AQF3w5tFaK1aFA/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1517712057780?e=1759968000&v=beta&t=pfH7Le5YF1N7CErTrlaG5BJkmp9YNhMlOmPNWBSk6fo"
+    profilePic:
+      "https://media.licdn.com/dms/image/v2/C4E03AQF3w5tFaK1aFA/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1517712057780?e=1759968000&v=beta&t=pfH7Le5YF1N7CErTrlaG5BJkmp9YNhMlOmPNWBSk6fo",
   },
   {
     name: "Zilay Huda",
     role: "Software Engineer",
     linkedin: "https://www.linkedin.com/in/zilehuda/",
     bio: "An experienced Software Engineer with a demonstrated history of working in the information technology and services industry. ~5 years of experience in the design/development of Backend systems and APIs/Services for FMCGs to startups.",
-    profilePic: "https://media.licdn.com/dms/image/v2/D4D03AQE2Zi4iQsPn8Q/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1718623199646?e=1759968000&v=beta&t=FJiliHPLEYRMY-zphAuVDpKDHxss7tTQWELI6uvbMII"
+    profilePic:
+      "https://media.licdn.com/dms/image/v2/D4D03AQE2Zi4iQsPn8Q/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1718623199646?e=1759968000&v=beta&t=FJiliHPLEYRMY-zphAuVDpKDHxss7tTQWELI6uvbMII",
   },
   {
     name: "Muhammad Talha",
     role: "Data Analyst",
     linkedin: "https://www.linkedin.com/in/mohammad-talha-datadaily/",
     bio: "As a Data Analyst with extensive experience in machine learning and data visualization, I excel at turning complex data into actionable insights to drive strategic business decisions. Currently, I lead cross-functional teams to optimize production processes and enhance operational efficiency using data-driven strategies.",
-    profilePic: "https://media.licdn.com/dms/image/v2/D4D03AQEI8_wOdyOJlA/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1729431760222?e=1759968000&v=beta&t=xtGz4MhrIbt3MHv8y7TDZhJdsSp6dm0A9X-B9JtRIiw"
-  }
-];
+    profilePic:
+      "https://media.licdn.com/dms/image/v2/D4D03AQEI8_wOdyOJlA/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1729431760222?e=1759968000&v=beta&t=xtGz4MhrIbt3MHv8y7TDZhJdsSp6dm0A9X-B9JtRIiw",
+  },
+]
 
 const projects = [
   {
     name: "Easymeal",
     description: "A robust CRUD application for managing vending machines",
-    details: "Easymeal automates various processes essential to vending machine owners, including refill management, encashment and sales monitoring, route planning, maintenance scheduling, and employee management.",
+    details:
+      "Easymeal automates various processes essential to vending machine owners, including refill management, encashment and sales monitoring, route planning, maintenance scheduling, and employee management.",
     technologies: ["Django", "Celery", "React"],
-    deployment: "AWS"
+    deployment: "AWS",
   },
   {
     name: "RahmanAcademy",
     description: "An interactive learning platform for medical students",
-    details: "RahmanAcademy provides topic-based MCQs, performance ratings, and comprehensive MCQ management for medical students.",
+    details:
+      "RahmanAcademy provides topic-based MCQs, performance ratings, and comprehensive MCQ management for medical students.",
     technologies: ["React", "Django"],
-    deployment: "Heroku"
+    deployment: "Heroku",
   },
   {
     name: "Snowflake Warehousing System",
     description: "A comprehensive data warehousing solution",
-    details: "Developed at Seed Labs, this system efficiently managed the transport of over one billion rows of data, resulting in significant cost savings.",
+    details:
+      "Developed at Seed Labs, this system efficiently managed the transport of over one billion rows of data, resulting in significant cost savings.",
     technologies: ["Python", "Snowflake"],
-    deployment: "Snowflake"
-  }
-];
+    deployment: "Snowflake",
+  },
+]
 
-export default function Home() {
-  
+export default function SirFasTechHomepage() {
+  const [scrollY, setScrollY] = useState(0)
+
+  useEffect(() => {
+    const handleScroll = () => setScrollY(window.scrollY)
+    window.addEventListener("scroll", handleScroll)
+    return () => window.removeEventListener("scroll", handleScroll)
+  }, [])
 
   return (
-    <main className="min-h-screen pt-24 dark bg-gray-900 text-gray-100">
-      <header className="fixed top-0 left-0 right-0 z-10 bg-gray-900 shadow-md transition-colors duration-300">
-        <nav className="container mx-auto px-6 py-4">
-          <div className="flex justify-between items-center">
-            <div className="text-2xl font-bold text-blue-600">Sirfastech</div>
-            <div className="hidden md:flex space-x-6">
-              {['Services', 'About', 'Team', 'Projects', 'Testimonials'].map((item) => (
+    <div className="min-h-screen bg-background">
+      {/* Navigation */}
+      <nav className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 border-b transition-all duration-300">
+        <div className="container mx-auto px-4 py-4">
+          <div className="flex items-center justify-between">
+            <div className="text-2xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text animate-pulse">
+              SirFasTech
+            </div>
+            <div className="hidden md:flex space-x-8">
+              {["Services", "About", "Team", "Projects", "Testimonials", "Contact"].map((item) => (
                 <a
                   key={item}
                   href={`#${item.toLowerCase()}`}
-                  className="text-gray-300 hover:text-white transition-colors duration-300"
+                  className="text-muted-foreground hover:text-primary transition-all duration-300 hover:scale-105 relative group"
                 >
                   {item}
+                  <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-accent transition-all duration-300 group-hover:w-full"></span>
                 </a>
               ))}
             </div>
           </div>
-        </nav>
-      </header>
+        </div>
+      </nav>
 
-      <section className="bg-gradient-to-r from-gray-900 to-blue-900 text-white py-20">
-        <div className="container mx-auto px-6 text-center">
-          <h1 className="text-5xl font-bold mb-4">Welcome to SirFasTech</h1>
-          <p className="text-xl mb-8">Delivering high-quality solutions with integrity and innovation</p>
-          <a href="#contact" className="bg-blue-600 hover:bg-blue-700 px-6 py-3 rounded-full font-semibold transition duration-300">Get in Touch</a>
+      {/* Hero Section */}
+      <section className="relative py-32 px-4 overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-secondary/5 to-accent/10 animate-pulse"></div>
+        <div
+          className="absolute inset-0 opacity-20"
+          style={{
+            backgroundImage: `radial-gradient(circle at 25% 25%, rgba(var(--primary), 0.1) 0%, transparent 50%), 
+                             radial-gradient(circle at 75% 75%, rgba(var(--secondary), 0.1) 0%, transparent 50%)`,
+            transform: `translateY(${scrollY * 0.5}px)`,
+          }}
+        ></div>
+        <div className="container mx-auto text-center relative z-10">
+          <h1 className="text-5xl md:text-7xl font-bold mb-6 text-balance">
+            <span className="inline-block animate-bounce" style={{ animationDelay: "0s" }}>
+              Welcome
+            </span>{" "}
+            <span className="inline-block animate-bounce" style={{ animationDelay: "0.1s" }}>
+              to
+            </span>{" "}
+            <span
+              className="inline-block bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text animate-bounce"
+              style={{ animationDelay: "0.2s" }}
+            >
+              SirFasTech
+            </span>
+          </h1>
+          <p
+            className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-3xl mx-auto text-pretty opacity-0 animate-fade-in"
+            style={{ animationDelay: "0.5s", animationFillMode: "forwards" }}
+          >
+            Delivering high-quality solutions with integrity and innovation
+          </p>
+          <Button
+            size="lg"
+            className="bg-primary hover:bg-primary/90 text-primary-foreground hover:scale-110 transition-all duration-500 shadow-lg hover:shadow-xl opacity-0 animate-fade-in"
+            style={{ animationDelay: "0.8s", animationFillMode: "forwards" }}
+            asChild
+          >
+            <a href="#contact">Get in Touch</a>
+          </Button>
         </div>
       </section>
 
-      <section id="services" className="py-20">
-        <div className="container mx-auto px-6">
-          <h2 className="text-3xl font-bold text-center mb-8">Our Services</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {["Web Development", "AI/ML", "Software Consulting", "Data Engineering"].map((service, index) => (
-              <div key={index} className="bg-gray-800 p-6 rounded-lg shadow-md">
-                <h3 className="text-xl font-semibold mb-4">{service}</h3>
-                <p className="text-gray-300">
-                  {service === "Web Development" && "We create responsive, user-friendly websites and web applications using cutting-edge technologies."}
-                  {service === "AI/ML" && "Our AI/ML solutions help businesses leverage data for intelligent decision-making and process automation."}
-                  {service === "Software Consulting" && "We provide expert guidance on software architecture, development practices, and technology selection."}
-                  {service === "Data Engineering" && "Our data engineering services help organizations build robust data pipelines and infrastructure for efficient data management."}
-                </p>
-              </div>
+      {/* Services Section */}
+      <section id="services" className="py-20 px-4 bg-muted/30">
+        <div className="container mx-auto">
+          <h2 className="text-4xl font-bold text-center mb-16 text-balance animate-slide-up">Our Services</h2>
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {[
+              {
+                icon: Code,
+                title: "Web Development",
+                desc: "We create responsive, user-friendly websites and web applications using cutting-edge technologies.",
+              },
+              {
+                icon: Brain,
+                title: "AI/ML",
+                desc: "Our AI/ML solutions help businesses leverage data for intelligent decision-making and process automation.",
+              },
+              {
+                icon: Users,
+                title: "Software Consulting",
+                desc: "We provide expert guidance on software architecture, development practices, and technology selection.",
+              },
+              {
+                icon: Database,
+                title: "Data Engineering",
+                desc: "Our data engineering services help organizations build robust data pipelines and infrastructure for efficient data management.",
+              },
+            ].map((service, index) => (
+              <Card
+                key={index}
+                className="gradient-card border-0 hover:shadow-xl transition-all duration-500 hover:scale-105 hover:-translate-y-2 animate-fade-in group text-2xl"
+                style={{ animationDelay: `${index * 0.2}s` }}
+              >
+                <CardHeader>
+                  <service.icon className="w-12 h-12 text-accent mb-4 group-hover:animate-float" />
+                  <CardTitle className=" group-hover:text-accent transition-colors duration-300">
+                    {service.title}
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <CardDescription>{service.desc}</CardDescription>
+                </CardContent>
+              </Card>
             ))}
           </div>
         </div>
       </section>
 
-      <section id="about" className="bg-gray-800 py-20">
-        <div className="container mx-auto px-6">
-          <h2 className="text-3xl font-bold text-center mb-8">About Us</h2>
-          <div className="flex flex-col md:flex-row items-center">
-            <div className="md:w-1/2 mb-8 md:mb-0">
-              <Image src="https://raw.githubusercontent.com/ibadia/ibadia.github.io/newcvtemplate/images/background_image_horse_ibad.jpeg" alt="About Us" width={600} height={400} className="rounded-lg shadow-lg" />
+      {/* About Section */}
+      <section id="about" className="py-20 px-4 relative overflow-hidden">
+        <div className="container mx-auto">
+          <div className="flex flex-col lg:flex-row items-center gap-12">
+            <div className="lg:w-1/2 animate-slide-up">
+              <Image
+                src="https://raw.githubusercontent.com/ibadia/ibadia.github.io/newcvtemplate/images/background_image_horse_ibad.jpeg"
+                alt="About Us"
+                width={600}
+                height={400}
+                className="rounded-2xl shadow-2xl hover:scale-105 transition-transform duration-500"
+              />
             </div>
-            <div className="md:w-1/2 md:pl-8">
-              <p className="text-lg text-gray-300 mb-4">
-                We come with rich experience in programming and have developed several applications in our career. We have a good experience of data science, machine learning and software architecture. We love programming and love to use programming to create a positive impact.
+            <div className="lg:w-1/2 animate-fade-in" style={{ animationDelay: "0.3s" }}>
+              <h2 className="text-4xl font-bold mb-8 text-balance">About Us</h2>
+              <p className="text-lg text-muted-foreground mb-6 text-pretty">
+                We come with rich experience in programming and have developed several applications in our career. We
+                have a good experience of data science, machine learning and software architecture. We love programming
+                and love to use programming to create a positive impact.
               </p>
-              <p className="text-lg text-gray-300 mb-4">
-                Our core values define our way of working:
-              </p>
-              <ul className="list-disc list-inside text-lg text-gray-300 mb-4">
-                <li>Work Hard: There is no alternate to working hard. We work hard and enjoy working hard. We have the policy of undercommitting and overdelivering.</li>
-                <li>Be Ethical and maintain integrity: We are always ethical and transparent on how exactly we are completing a project.</li>
-                <li>Be Honest: We call spade a spade while maintaining respect. Honest conversations are always helpful in the long term and in the best interest of all.</li>
-              </ul>
-              <p className="text-lg text-gray-300 mb-4">
-                These three ethos define the way we work and guide our clients on their respective problems.
-              </p>
+              <p className="text-lg text-muted-foreground mb-6">Our core values define our way of working:</p>
+
+              <div className="space-y-4">
+                {[
+                  {
+                    title: "Work Hard",
+                    desc: "There is no alternate to working hard. We work hard and enjoy working hard. We have the policy of undercommitting and overdelivering.",
+                  },
+                  {
+                    title: "Be Ethical",
+                    desc: "We are always ethical and transparent on how exactly we are completing a project.",
+                  },
+                  {
+                    title: "Be Honest",
+                    desc: "We call spade a spade while maintaining respect. Honest conversations are always helpful in the long term and in the best interest of all.",
+                  },
+                ].map((value, index) => (
+                  <div
+                    key={index}
+                    className="flex items-start gap-4 p-4 rounded-lg gradient-card hover:shadow-lg transition-all duration-300 text-xl"
+                  >
+                    <div className="w-2 h-2 bg-accent rounded-full mt-2 animate-glow"></div>
+                    <div>
+                      <h4 className="font-semibold text-accent mb-2">{value.title}</h4>
+                      <p className="text-muted-foreground text-lg">{value.desc}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      <section id="team" className="py-20">
-        <div className="container mx-auto px-6">
-          <h2 className="text-3xl font-bold text-center mb-8">Our Team</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+      {/* Team Section */}
+      <section id="team" className="py-20 px-4 bg-muted/30">
+        <div className="container mx-auto">
+          <h2 className="text-4xl font-bold text-center mb-16 text-balance animate-slide-up">Our Team</h2>
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {teamMembers.map((member, index) => (
-              <div key={index} className="bg-gray-800 p-6 rounded-lg shadow-md">
-                <div className="flex flex-col items-center mb-4">
-                  <Image
-                    src={member.profilePic}
-                    alt={member.name}
-                    width={100}
-                    height={100}
-                    className="rounded-full mb-2"
-                  />
-                  <h3 className="text-xl font-semibold text-center">{member.name}</h3>
-                  <p className="text-gray-300 text-center">{member.role}</p>
-                </div>
-                <p className="text-gray-300 mb-4 text-sm">{member.bio}</p>
-                <a href={member.linkedin} target="_blank" rel="noopener noreferrer" className="inline-flex items-center text-blue-500 hover:text-blue-600">
-                  <svg className="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                    <path fillRule="evenodd" d="M16.338 16.338H13.67V12.16c0-.995-.017-2.277-1.387-2.277-1.39 0-1.601 1.086-1.601 2.207v4.248H8.014v-8.59h2.559v1.174h.037c.356-.675 1.227-1.387 2.526-1.387 2.703 0 3.203 1.778 3.203 4.092v4.711zM5.005 6.575a1.548 1.548 0 11-.003-3.096 1.548 1.548 0 01.003 3.096zm-1.337 9.763H6.34v-8.59H3.667v8.59zM17.668 1H2.328C1.595 1 1 1.581 1 2.298v15.403C1 18.418 1.595 19 2.328 19h15.34c.734 0 1.332-.582 1.332-1.299V2.298C19 1.581 18.402 1 17.668 1z" clipRule="evenodd" />
-                  </svg>
-                  LinkedIn
-                </a>
-              </div>
+              <Card
+                key={index}
+                className="text-center gradient-card border-0 hover:shadow-xl transition-all duration-500 hover:scale-105 hover:-translate-y-2 animate-fade-in group"
+                style={{ animationDelay: `${index * 0.2}s` }}
+              >
+                <CardHeader>
+                  <Avatar className="w-24 h-24 mx-auto mb-4 ring-4 ring-accent/20 group-hover:ring-accent/50 transition-all duration-300">
+                    <AvatarImage src={member.profilePic || "/placeholder.svg"} alt={member.name} />
+                    <AvatarFallback>
+                      {member.name
+                        .split(" ")
+                        .map((n) => n[0])
+                        .join("")}
+                    </AvatarFallback>
+                  </Avatar>
+                  <CardTitle className="group-hover:text-accent transition-colors duration-300">
+                    {member.name}
+                  </CardTitle>
+                  <CardDescription>{member.role}</CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-lg text-muted-foreground mb-4 line-clamp-4">{member.bio}</p>
+                  <Button
+                    variant="outline"
+                    size="sm"
+                    className="hover:bg-accent hover:text-accent-foreground transition-all duration-300 bg-transparent"
+                    asChild
+                  >
+                    <a href={member.linkedin} target="_blank" rel="noopener noreferrer">
+                      <Linkedin className="w-4 h-4 mr-2" />
+                      LinkedIn
+                    </a>
+                  </Button>
+                </CardContent>
+              </Card>
             ))}
           </div>
         </div>
       </section>
 
-      <section id="projects" className="bg-gray-800 py-20">
-        <div className="container mx-auto px-6">
-          <h2 className="text-3xl font-bold text-center mb-8">Our Projects</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {projects.map((project, index) => (
-              <div key={index} className="bg-gray-700 p-6 rounded-lg shadow-md">
-                <h3 className="text-xl font-semibold mb-4">{project.name}</h3>
-                <p className="text-gray-300 mb-4">{project.description}</p>
-                <p className="text-gray-300 mb-4">{project.details}</p>
-                <p className="text-gray-300 mb-2"><strong>Technologies:</strong> {project.technologies.join(', ')}</p>
-                <p className="text-gray-300"><strong>Deployed on:</strong> {project.deployment}</p>
-              </div>
-            ))}
+      {/* Projects Section */}
+      <section id="projects" className="py-20 px-4">
+        <div className="container mx-auto">
+          <h2 className="text-4xl font-bold text-center mb-16 text-balance animate-slide-up">Our Projects</h2>
+          <div className="w-full max-w-7xl mx-auto">
+            <Carousel
+              opts={{
+                align: "start",
+                loop: true,
+              }}
+              className="w-full"
+            >
+              <CarouselContent className="-ml-2 md:-ml-4">
+                {projects.map((project, index) => (
+                  <CarouselItem key={index} className="pl-2 md:pl-4 md:basis-1/2 lg:basis-1/3">
+                    <Card className="bg-gradient-to-br from-green-50 to-emerald-100 dark:from-green-950/20 dark:to-emerald-950/20 border-green-200 dark:border-green-800 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-[1.02] ">
+                      <CardHeader className="text-center pb-4">
+                        <CardTitle className="text-2xl font-bold text-green-900 dark:text-green-100 mb-2">
+                          {project.name}
+                        </CardTitle>
+                        <CardDescription className="text-green-700 dark:text-green-300 font-medium">
+                          {project.description}
+                        </CardDescription>
+                      </CardHeader>
+                      <CardContent className="p-6 pt-0 flex flex-col h-full">
+                        <p className="text-green-800 dark:text-green-200 text-lg leading-relaxed mb-4 flex-1">
+                          {project.details}
+                        </p>
+
+                        <div className="mb-4">
+                          <h4 className="font-semibold text-green-900 dark:text-green-100 mb-2 text-lg">
+                            Technologies:
+                          </h4>
+                          <div className="flex flex-wrap gap-1">
+                            {project.technologies.map((tech, techIndex) => (
+                              <span
+                                key={techIndex}
+                                className="inline-flex items-center rounded-full bg-green-200 dark:bg-green-800 px-2 py-1 text-md font-medium text-green-800 dark:text-green-200 border border-green-300 dark:border-green-700"
+                              >
+                                {tech}
+                              </span>
+                            ))}
+                          </div>
+                        </div>
+
+                        <div className="flex items-center justify-between mt-auto">
+                          <div>
+                            <span className="text-md text-green-600 dark:text-green-400">Deployed on: </span>
+                            <span className="font-semibold text-green-800 dark:text-green-200 text-sm">
+                              {project.deployment}
+                            </span>
+                          </div>
+                          <ExternalLink className="w-4 h-4 text-green-600 dark:text-green-400" />
+                        </div>
+                      </CardContent>
+                    </Card>
+                  </CarouselItem>
+                ))}
+              </CarouselContent>
+              <CarouselPrevious className="bg-green-100 hover:bg-green-200 dark:bg-green-900 dark:hover:bg-green-800 border-green-300 dark:border-green-700" />
+              <CarouselNext className="bg-green-100 hover:bg-green-200 dark:bg-green-900 dark:hover:bg-green-800 border-green-300 dark:border-green-700" />
+            </Carousel>
           </div>
         </div>
       </section>
 
-      <section id="testimonials" className="py-20">
-        <div className="container mx-auto px-6">
-          <h2 className="text-3xl font-bold text-center mb-8">Testimonials</h2>
+      {/* Testimonials Section */}
+      <section id="testimonials" className="py-20 px-4 bg-muted/30">
+        <div className="container mx-auto">
+          <h2 className="text-4xl font-bold text-center mb-16 text-balance animate-slide-up">Testimonials</h2>
           <Testimonials />
         </div>
       </section>
 
-      <section id="contact" className="bg-gray-800 py-20">
-        <div className="container mx-auto px-6">
-          <h2 className="text-3xl font-bold text-center mb-8">Get in Touch</h2>
-          <div className="bg-gray-700 p-8 rounded-lg shadow-md max-w-2xl mx-auto">
-            <div className="flex flex-col items-center space-y-6">
-              <div className="text-center">
-                <h3 className="text-2xl font-semibold mb-2 text-gray-100">Let&apos;s Connect</h3>
-                <p className="text-lg text-gray-300">
-                  We&apos;re excited to hear from you and discuss how we can help with your project.
-                </p>
-              </div>
-              <div className="flex items-center space-x-4">
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                </svg>
-                <a href="mailto:ibad@sirfastech.com" className="text-lg text-blue-400 hover:text-blue-300">
-                  ibad@sirfastech.com
-                </a>
-              </div>
-              <div className="w-full max-w-md">
-                <a
-                  href="https://calendly.com/ibad2762/30min?month=2024-08"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="block w-full text-center py-3 px-4 rounded-lg transition-colors duration-300 bg-blue-600 hover:bg-blue-700 text-white"
-                >
+      {/* Contact Section */}
+      <section id="contact" className="py-20 px-4 relative overflow-hidden">
+        <div className="absolute inset-0 gradient-primary opacity-5 animate-float"></div>
+        <div className="container mx-auto relative z-10">
+          <div className="max-w-2xl mx-auto text-center">
+            <h2 className="text-4xl font-bold mb-8 text-balance animate-slide-up">Get in Touch</h2>
+            <p
+              className="text-lg text-muted-foreground mb-12 text-pretty animate-fade-in"
+              style={{ animationDelay: "0.2s" }}
+            >
+              We're excited to hear from you and discuss how we can help with your project.
+            </p>
+
+            <div className="space-y-6">
+              <Card
+                className="gradient-card border-0 p-6 hover:shadow-xl transition-all duration-300 animate-scale-in"
+                style={{ animationDelay: "0.4s" }}
+              >
+                <div className="flex items-center justify-center gap-4">
+                  <Mail className="w-6 h-6 text-accent animate-glow" />
+                  <div>
+                    <p className="font-semibold">Email</p>
+                    <a
+                      href="mailto:ibad@sirfastech.com"
+                      className="text-accent hover:text-accent/80 transition-colors duration-300 hover:underline"
+                    >
+                      ibad@sirfastech.com
+                    </a>
+                  </div>
+                </div>
+              </Card>
+
+              <Button
+                size="lg"
+                className="bg-accent hover:bg-accent/90 text-accent-foreground hover:scale-105 transition-all duration-300 animate-glow animate-scale-in"
+                style={{ animationDelay: "0.6s" }}
+                asChild
+              >
+                <a href="https://calendly.com/ibad2762/30min?month=2024-08" target="_blank" rel="noopener noreferrer">
+                  <Phone className="w-4 h-4 mr-2" />
                   Schedule a 30-minute call
+                  <ExternalLink className="w-4 h-4 ml-2" />
                 </a>
-              </div>
+              </Button>
             </div>
           </div>
         </div>
       </section>
 
-      <footer className="bg-gray-800 text-white py-10">
-        <div className="container mx-auto px-6">
+      {/* Footer */}
+      <footer className="gradient-primary-foreground text-primary-foreground py-12 px-4">
+        <div className="container mx-auto">
           <div className="flex flex-col md:flex-row justify-between items-center">
-            <div className="mb-4 md:mb-0">
-              <h3 className="text-2xl font-bold mb-2 text-blue-400">SirFasTech</h3>
-              <p>Delivering excellence in software development</p>
+            <div className="mb-4 md:mb-0 text-center md:text-left">
+              <h3 className="text-2xl font-bold mb-2 ">SirFasTech</h3>
+              <p className="opacity-90">Delivering excellence in software development</p>
             </div>
-            <div>
+            <div className="text-center md:text-right">
               <h4 className="text-lg font-semibold mb-2">Connect with our founder</h4>
-              <div className="flex space-x-4">
-                <a href="https://www.linkedin.com/in/ibadski/" className="hover:text-blue-400 transition-colors duration-300">Ibad Ur Rahman</a>
-              </div>
+              <Button
+                variant="outline"
+                size="sm"
+                className="border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary transition-all duration-300 bg-transparent text-lg"
+                asChild
+              >
+                <a href="https://www.linkedin.com/in/ibadski/" target="_blank" rel="noopener noreferrer">
+                  <Linkedin className="w-4 h-4 mr-2" />
+                  Ibad Ur Rahman
+                </a>
+              </Button>
             </div>
           </div>
-          <div className="mt-8 text-center text-gray-400">
+          <div className="mt-8 text-center opacity-75">
             <p>&copy; 2024 Sirfastech. All rights reserved.</p>
           </div>
         </div>
       </footer>
-    </main>
-  );
+    </div>
+  )
 }

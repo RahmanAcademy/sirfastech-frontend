@@ -1,42 +1,36 @@
-import Image from "next/image";
-import Avatar from "./avatar";
+"use client"
 
-interface Testimonial {
-  image: string;
-  name: string;
-  title: string;
-  date: string;
-  text: string;
-  link: string;
-}
+import { Card, CardContent } from "@/components/ui/card"
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
+import { Star, ExternalLink } from "lucide-react"
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel"
 
-const testimonials: Testimonial[] = [
+const testimonials = [
   {
     image:
       "https://media.licdn.com/dms/image/v2/C5103AQEndZagxNo9Kg/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1586539953087?e=1759968000&v=beta&t=E28Ug7iHOzCU51UHAulKdm52w2UwNT90WLSAfuBXn7w",
     name: "Aarthika Thangavel",
     title: "VP, Marketing MI and Analytics",
     date: "August 27, 2023",
-    text: "Ibad is a knowledgeable team member with good problem solving skills. He brings in variety of approaches for the data science problems which have derived critical insights. He solves complex problems with his excellent coding abilities and has been very focused on the task at hand. He is a great team player and helped few of our team members to come up to speed in the ML problems. I wish him all the best.",
+    text: "Ibad is a knowledgeable team member with good problem solving skills. He brings in variety of approaches for the data science problems which have derived critical insights. He solves complex problems with his excellent coding abilities and has been very focused on the task at hand.",
     link: "https://www.linkedin.com/in/aarthika-thangavel-9a3928a4",
   },
   {
     image:
       "https://media.licdn.com/dms/image/v2/D4E03AQGqWYazAnewdw/profile-displayphoto-shrink_100_100/profile-displayphoto-shrink_100_100/0/1698764766910?e=1729123200&v=beta&t=ByNPPJYtqS8D2ABWGvGx9-Xym35RxHw0Yn_4wYkIpDE",
     name: "James Bryce",
-    title: "The role and value of the spoken word: speech intelligence",
+    title: "Speech Intelligence Expert",
     date: "June 15, 2019",
-    text: "Ibad was a key member of a University of Sheffield MSc Data Science research project with gweek in early 2019. With his team colleagues, Ibad underwent a steep learning curve, applying his skills to the extremely complex domain of speech and communication technology. In just 8 weeks, Ibad and team were able to come up to speed and produce some highly credible research outputs, highly relevant to our work. Ibad is diligent, patient and methodical. He is an absolute pleasure to work with. He would be a strong asset within any technology team. I hope we get to work together again at some stage.",
+    text: "Ibad was a key member of a University of Sheffield MSc Data Science research project. In just 8 weeks, Ibad and team were able to come up to speed and produce some highly credible research outputs. Ibad is diligent, patient and methodical.",
     link: "https://www.linkedin.com/in/james-b-55b038b",
   },
   {
     image:
       "https://media.licdn.com/dms/image/v2/D4E03AQGyiQGlFajkeg/profile-displayphoto-shrink_200_200/B4EZZYar5.HkAY-/0/1745240113457?e=1759968000&v=beta&t=KVLL1fgkdjelZmTQWulzxQ7nk46wrLDhllu7yW5EnQQ",
     name: "Rahul Sengupta",
-    title:
-      "Private Cloud and Middleware - Barclays UK | Member of CoffeeMug.ai",
+    title: "Private Cloud and Middleware - Barclays UK",
     date: "June 12, 2019",
-    text: "I have worked closely with Mr. Ibad Ur Rahman. He is the one of the most diligent and intelligent people I know. He has expertise in all the Machine Learning Algorithms including Linear Regression, Logistic Regression, Bayesian Regression, Basis Functions, Generalisation, K-means, etc. He is also adept at PySpark including RDD, Decision Trees, PCA and Scalable Models. Due to our project work on extending the features of the Gweek app, he has helped the team build Neural Network and various models based on Machine Learning algorithms to check for the audio classification. Without him, our project would have been a difficult affair. Apart from all this, he has a flair for Text Processing and Natural Language Processing which are extremely relevant fields in the years to come.",
+    text: "Ibad is one of the most diligent and intelligent people I know. He has expertise in all Machine Learning Algorithms and is adept at PySpark. Due to our project work, he helped build Neural Network models for audio classification.",
     link: "https://www.linkedin.com/in/rahul-sengupta",
   },
   {
@@ -45,101 +39,86 @@ const testimonials: Testimonial[] = [
     name: "Martin Skauen",
     title: "Senior Data Engineer at Itera Fredrikstad",
     date: "May 26, 2019",
-    text: "I worked together with Ibad on the industrial team project, in which I was really impressed by his professional skills, creative thinking and team management skills. His background in Computer Science and quick mind gave us a huge advantage in terms of understanding speech data and how to transfer our knowledge from Data Analytics on this topic of Speech Processing. Moreover, Ibad is a great motivator and leader, who can pull the strings and also handle tight deadlines. I personally value his character; modest, honest and always smiling. He has my highest recommendations.",
+    text: "I was really impressed by Ibad's professional skills, creative thinking and team management skills. His background in Computer Science gave us a huge advantage in Speech Processing. He's a great motivator and leader.",
     link: "https://www.linkedin.com/in/mskauen",
   },
   {
     image:
       "https://media.licdn.com/dms/image/v2/D5603AQH6Jpz7Vm6GyQ/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1729159625261?e=1759968000&v=beta&t=CiKNEYOiVacz6bx3MIa8y4KxwebIpLlJLDj1-rlkaLg",
     name: "Yuliang Li",
-    title:
-      "Data Scientist at PwC Consulting Services | MLOps | Azure + AWS + K8S Certified",
+    title: "Data Scientist at PwC Consulting Services",
     date: "January 23, 2019",
-    text: "Ibad is a self-motivated person who has been diving deeply in data science for years because of his passion for it. He's especially good at drawing insights from data with visualization tools, I know that because we're striving for a Kaggle competition in a team.In daily life, he's a diligent student who pays efforts on not only schooling works but also off-curriculum knowledge which could benefit his career and broaden his horizon(like bitcoin techniques).All in all, he must be a high performancer in your team.",
+    text: "Ibad is a self-motivated person who has been diving deeply in data science for years. He's especially good at drawing insights from data with visualization tools. He must be a high performer in your team.",
     link: "https://www.linkedin.com/in/yuliang-li-julian",
-  },
-  {
-    image:
-      "https://media.licdn.com/dms/image/v2/C5103AQHfPchNFa7ERQ/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1572499686184?e=1759968000&v=beta&t=s5auVPizJimoheztnmHQih8RYGmyKUYfDclGc4uZHHM",
-    name: "Ilsa Baqai",
-    title:
-      "PwC KSA Empower Council | Data Science | Machine Learning | Deep Learning | Data Analytics",
-    date: "October 9, 2018",
-    text: "I had the not only academic but professional interaction with Ibad. I observed Ibad wonderful to work with. He has the capability to critically analyze situations and direct his thoughts to solutions. Additionally, Ibad is also a quick learner who can adapt well to situations. He can work well independently and as a team member both. Under the light of my observations, I highly recommend Ibad.",
-    link: "https://www.linkedin.com/in/ilsa-baqai",
   },
   {
     image:
       "https://media.licdn.com/dms/image/v2/D4E03AQG4lGzr_9HHzg/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1666951332557?e=1759968000&v=beta&t=vHbGwAWf9skMCCskyjTSvKadVlNgxThlcnBHWiqhi0E",
     name: "Pavel Romashov",
-    title: "Senior product manager and former analytics engineer team lead",
+    title: "Senior Product Manager",
     date: "March 21, 2023",
-    text: "I worked together with Hafiz in Y42 as a product manager. Hafiz's performance was always on point. I also enjoyed his sense of discipline and responsibility, which made the feature development process a very enjoyable journey. I have no hesitation in recommending him to potential employers.",
+    text: "I worked together with Hafiz in Y42 as a product manager. Hafiz's performance was always on point. I enjoyed his sense of discipline and responsibility, which made feature development a very enjoyable journey.",
     link: "https://www.linkedin.com/in/pavel-romashov",
   },
-  {
-    image:
-      "https://media.licdn.com/dms/image/v2/D4E03AQExmPZfpS7R0g/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1700216931518?e=1759968000&v=beta&t=_uKLSm0VjIcxVaV2YSbegVNNyaBP3mOy_lQmsHR8re4",
-    name: "Oltjona Dyrmishi",
-    title:
-      "Data Platforms | Data Architecture | Data Strategy | Data Governance",
-    date: "March 30, 2023",
-    text: "I am pleased to recommend Hafiz, a talented Python Engineer who has been a valuable member of my team during my time as his Engineering Manager. Hafiz is a hard-working individual with a disciplined and can-do mentality, consistently demonstrating a strong sense of ownership and an eagerness to challenge himself.One of Hafiz's greatest strengths is his passion for learning and desire to continually improve his skills. He is not afraid to take on new challenges, and his willingness to step outside of his comfort zone has allowed him to develop a diverse set of skills.I have no hesitation in recommending Hafiz for any future roles or opportunities. His hard-working nature, disciplined mindset, ownership mentality, and eagerness to challenge himself make him a great candidate for any Python engineering role.",
-    link: "https://www.linkedin.com/in/oltjona-dyrmishi-982aba21",
-  },
-];
+]
 
-const Testimonials: React.FC = () => {
+export default function Testimonials() {
   return (
-    <div className="bg-gray-50 dark:bg-gray-800 py-12">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-3xl font-extrabold text-gray-900 dark:text-gray-100 mb-8">
-          Testimonials
-        </h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+    <div className="w-full max-w-7xl mx-auto px-4">
+      <Carousel
+        opts={{
+          align: "start",
+          loop: true,
+        }}
+        className="w-full"
+      >
+        <CarouselContent className="-ml-2 md:-ml-4">
           {testimonials.map((testimonial, index) => (
-            <div
-              key={index}
-              className="bg-white dark:bg-gray-700 shadow-lg rounded-lg overflow-hidden transition-all duration-300 hover:shadow-xl"
-            >
-              <div className="p-6">
-                <div className="flex items-center mb-4">
-                  <div>
-                    <Avatar src={testimonial.image} alt={testimonial.name} />
+            <CarouselItem key={index} className="pl-2 md:pl-4 md:basis-1/2 lg:basis-1/3">
+              <Card className="h-full bg-gradient-to-br from-blue-50 to-indigo-100 dark:from-blue-950/20 dark:to-indigo-950/20 border-blue-200 dark:border-blue-800 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-[1.02]">
+                <CardContent className="p-6 flex flex-col h-full">
+                  <div className="flex items-center mb-4">
+                    <Avatar className="h-12 w-12 mr-3 ring-2 ring-blue-200 dark:ring-blue-700">
+                      <AvatarImage src={testimonial.image || "/placeholder.svg"} alt={testimonial.name} />
+                      <AvatarFallback className="bg-blue-100 dark:bg-blue-900 text-blue-700 dark:text-blue-300">
+                        {testimonial.name
+                          .split(" ")
+                          .map((n) => n[0])
+                          .join("")}
+                      </AvatarFallback>
+                    </Avatar>
+                    <div className="flex-1 min-w-0">
+                      <h4 className="font-semibold text-blue-900 dark:text-blue-100 truncate">{testimonial.name}</h4>
+                      <p className="text-xl text-blue-700 dark:text-blue-300 truncate">{testimonial.title}</p>
+                      <p className="text-lg text-blue-600 dark:text-blue-400">{testimonial.date}</p>
+                    </div>
+                    <a
+                      href={testimonial.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-200 transition-colors ml-2"
+                    >
+                      <ExternalLink className="w-4 h-4" />
+                    </a>
                   </div>
-                  <div className="ml-4">
-                    <h3 className="text-lg font-semibold text-gray-900 dark:text-gray-100">
-                      {testimonial.name}
-                    </h3>
-                    <p className="text-sm text-gray-600 dark:text-gray-300">
-                      {testimonial.title}
-                    </p>
+
+                  <div className="flex mb-3">
+                    {[...Array(5)].map((_, i) => (
+                      <Star key={i} className="w-4 h-4 fill-yellow-400 text-yellow-400" />
+                    ))}
                   </div>
-                </div>
-                <p className="text-gray-700 dark:text-gray-300 mb-4">
-                  {testimonial.text}
-                </p>
-                <div className="flex justify-between items-center">
-                  <span className="text-sm text-gray-500 dark:text-gray-400">
-                    {testimonial.date}
-                  </span>
-                  <a
-                    href={testimonial.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-blue-600 dark:text-blue-400 hover:underline"
-                  >
-                    View Profile
-                  </a>
-                </div>
-              </div>
-            </div>
+
+                  <blockquote className="text-blue-800 dark:text-blue-200 text-lg leading-relaxed italic flex-1">
+                    "{testimonial.text}"
+                  </blockquote>
+                </CardContent>
+              </Card>
+            </CarouselItem>
           ))}
-        </div>
-      </div>
+        </CarouselContent>
+        <CarouselPrevious className="bg-blue-100 hover:bg-blue-200 dark:bg-blue-900 dark:hover:bg-blue-800 border-blue-300 dark:border-blue-700" />
+        <CarouselNext className="bg-blue-100 hover:bg-blue-200 dark:bg-blue-900 dark:hover:bg-blue-800 border-blue-300 dark:border-blue-700" />
+      </Carousel>
     </div>
-  );
-};
-
-export default Testimonials;
-
+  )
+}
