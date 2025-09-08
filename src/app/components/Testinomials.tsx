@@ -109,7 +109,7 @@ export default function Testimonials() {
                   </div>
 
                   <blockquote className="text-blue-800 dark:text-blue-200 text-lg leading-relaxed italic flex-1">
-                    "{testimonial.text}"
+                    &quot;{testimonial.text}&quot;
                   </blockquote>
                 </CardContent>
               </Card>

@@ -381,7 +381,7 @@ export default function SirFasTechHomepage() {
               className="text-lg text-muted-foreground mb-12 text-pretty animate-fade-in"
               style={{ animationDelay: "0.2s" }}
             >
-              We're excited to hear from you and discuss how we can help with your project.
+              We&apos;re excited to hear from you and discuss how we can help with your project.
             </p>
 
             <div className="space-y-6">
