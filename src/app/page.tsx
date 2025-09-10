@@ -8,6 +8,7 @@ import { Mail, Phone, Linkedin, Code, Brain, Users, Database, ExternalLink } fro
 import Image from "next/image"
 import Testimonials from "@/app/components/Testinomials"
 import { useEffect, useState } from "react"
+import { useRouter } from "next/navigation"
 
 const teamMembers = [
   {
@@ -52,6 +53,7 @@ const projects = [
       "Easymeal automates various processes essential to vending machine owners, including refill management, encashment and sales monitoring, route planning, maintenance scheduling, and employee management.",
     technologies: ["Django", "Celery", "React"],
     deployment: "AWS",
+    url:"#"
   },
   {
     name: "RahmanAcademy",
@@ -60,6 +62,7 @@ const projects = [
       "RahmanAcademy provides topic-based MCQs, performance ratings, and comprehensive MCQ management for medical students.",
     technologies: ["React", "Django"],
     deployment: "Heroku",
+    url:"#"
   },
   {
     name: "Snowflake Warehousing System",
@@ -68,12 +71,22 @@ const projects = [
       "Developed at Seed Labs, this system efficiently managed the transport of over one billion rows of data, resulting in significant cost savings.",
     technologies: ["Python", "Snowflake"],
     deployment: "Snowflake",
+    url:"#"
+  },
+    {
+    name: "Movielyzer",
+    description: "A video analysis and manipulation tool",
+    details:
+      "Search through videos like text, summarize hours in seconds, and add AI narration that sounds human. The future of video is here.",
+    technologies: ["Django", "React"],
+    deployment: "AWS",
+    url:"https://movielyzer.com/"
   },
 ]
 
 export default function SirFasTechHomepage() {
   const [scrollY, setScrollY] = useState(0)
-
+  const router = useRouter();
   useEffect(() => {
     const handleScroll = () => setScrollY(window.scrollY)
     window.addEventListener("scroll", handleScroll)
@@ -349,7 +362,7 @@ export default function SirFasTechHomepage() {
                               {project.deployment}
                             </span>
                           </div>
-                          <ExternalLink className="w-4 h-4 text-green-600 dark:text-green-400" />
+                          <ExternalLink onClick={()=>router.push(project.url)} className="w-4 h-4 text-green-600 dark:text-green-400" />
                         </div>
                       </CardContent>
                     </Card>
