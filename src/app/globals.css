@@ -26,83 +26,81 @@
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-
-
 @layer base {
   :root {
-  --background: #ffffff; /* Main background color */
-  --foreground: #475569; /* Primary text color */
-  --card: #ecfeff; /* Card background */
-  --card-foreground: #164e63; /* Card text color */
-  --popover: #ffffff; /* Popover background */
-  --popover-foreground: #475569; /* Popover text color */
-  --primary: #164e63; /* Primary action color */
-  --primary-foreground: #ffffff; /* Primary action text color */
-  --secondary: #f97316; /* Secondary action color */
-  --secondary-foreground: #ffffff; /* Secondary action text color */
-  --muted: #ecfeff; /* Muted background */
-  --muted-foreground: #475569; /* Muted text color */
-  --accent: #f97316; /* Accent color for highlights */
-  --accent-foreground: #ffffff; /* Accent text color */
-  --destructive: #ea580c; /* Destructive action color */
-  --destructive-foreground: #ffffff; /* Destructive action text color */
-  --border: #475569; /* Border color */
-  --input: #ecfeff; /* Input background */
-  --ring: rgba(38, 194, 129, 0.5); /* Focus ring color */
-  --chart-1: #164e63; /* Chart color 1 */
-  --chart-2: #f97316; /* Chart color 2 */
-  --chart-3: #d97706; /* Chart color 3 */
-  --chart-4: #ea580c; /* Chart color 4 */
-  --chart-5: #ecfeff; /* Chart color 5 */
-  --radius: 0.5rem; /* Standard border radius for rounded corners */
-  --sidebar: #ffffff; /* Sidebar background */
-  --sidebar-foreground: #475569; /* Sidebar text color */
-  --sidebar-primary: #164e63; /* Sidebar primary color */
-  --sidebar-primary-foreground: #ffffff; /* Sidebar primary text color */
-  --sidebar-accent: #f97316; /* Sidebar accent color */
-  --sidebar-accent-foreground: #ffffff; /* Sidebar accent text color */
-  --sidebar-border: #475569; /* Sidebar border color */
-  --sidebar-ring: rgba(38, 194, 129, 0.5); /* Sidebar focus ring color */  }
+    --background: #ffffff; /* Main background color */
+    --foreground: #475569; /* Primary text color */
+    --card: #ecfeff; /* Card background */
+    --card-foreground: #164e63; /* Card text color */
+    --popover: #ffffff; /* Popover background */
+    --popover-foreground: #475569; /* Popover text color */
+    --primary: #164e63; /* Primary action color */
+    --primary-foreground: #ffffff; /* Primary action text color */
+    --secondary: #f97316; /* Secondary action color */
+    --secondary-foreground: #ffffff; /* Secondary action text color */
+    --muted: #ecfeff; /* Muted background */
+    --muted-foreground: #475569; /* Muted text color */
+    --accent: #f97316; /* Accent color for highlights */
+    --accent-foreground: #ffffff; /* Accent text color */
+    --destructive: #ea580c; /* Destructive action color */
+    --destructive-foreground: #ffffff; /* Destructive action text color */
+    --border: #475569; /* Border color */
+    --input: #ecfeff; /* Input background */
+    --ring: rgba(38, 194, 129, 0.5); /* Focus ring color */
+    --chart-1: #164e63; /* Chart color 1 */
+    --chart-2: #f97316; /* Chart color 2 */
+    --chart-3: #d97706; /* Chart color 3 */
+    --chart-4: #ea580c; /* Chart color 4 */
+    --chart-5: #ecfeff; /* Chart color 5 */
+    --radius: 0.5rem; /* Standard border radius for rounded corners */
+    --sidebar: #ffffff; /* Sidebar background */
+    --sidebar-foreground: #475569; /* Sidebar text color */
+    --sidebar-primary: #164e63; /* Sidebar primary color */
+    --sidebar-primary-foreground: #ffffff; /* Sidebar primary text color */
+    --sidebar-accent: #f97316; /* Sidebar accent color */
+    --sidebar-accent-foreground: #ffffff; /* Sidebar accent text color */
+    --sidebar-border: #475569; /* Sidebar border color */
+    --sidebar-ring: rgba(38, 194, 129, 0.5); /* Sidebar focus ring color */
+  }
   .dark {
-  --background: #0f172a;
-  --foreground: #f1f5f9;
-  --card: #1e293b;
-  --card-foreground: #f1f5f9;
-  --popover: #1e293b;
-  --popover-foreground: #f1f5f9;
-  --primary: #0ea5e9;
-  --primary-foreground: #0f172a;
-  --secondary: #f97316;
-  --secondary-foreground: #ffffff;
-  --muted: #334155;
-  --muted-foreground: #94a3b8;
-  --accent: #f97316;
-  --accent-foreground: #ffffff;
-  --destructive: #ea580c;
-  --destructive-foreground: #ffffff;
-  --border: #334155;
-  --input: #1e293b;
-  --ring: rgba(14, 165, 233, 0.5);
-  --chart-1: #0ea5e9;
-  --chart-2: #f97316;
-  --chart-3: #d97706;
-  --chart-4: #ea580c;
-  --chart-5: #334155;
-  --radius-sm: calc(var(--radius) - 4px);
-  --radius-md: calc(var(--radius) - 2px);
-  --radius-lg: var(--radius);
-  --radius-xl: calc(var(--radius) + 4px);
-  --color-sidebar: var(--sidebar);
-  --color-sidebar-foreground: var(--sidebar-foreground);
-  --color-sidebar-primary: var(--sidebar-primary);
-  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
-  --color-sidebar-accent: var(--sidebar-accent);
-  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
-  --color-sidebar-border: var(--sidebar-border);
-  --color-sidebar-ring: var(--sidebar-ring);  }
+    --background: #0f172a;
+    --foreground: #f1f5f9;
+    --card: #1e293b;
+    --card-foreground: #f1f5f9;
+    --popover: #1e293b;
+    --popover-foreground: #f1f5f9;
+    --primary: #0ea5e9;
+    --primary-foreground: #0f172a;
+    --secondary: #f97316;
+    --secondary-foreground: #ffffff;
+    --muted: #334155;
+    --muted-foreground: #94a3b8;
+    --accent: #f97316;
+    --accent-foreground: #ffffff;
+    --destructive: #ea580c;
+    --destructive-foreground: #ffffff;
+    --border: #334155;
+    --input: #1e293b;
+    --ring: rgba(14, 165, 233, 0.5);
+    --chart-1: #0ea5e9;
+    --chart-2: #f97316;
+    --chart-3: #d97706;
+    --chart-4: #ea580c;
+    --chart-5: #334155;
+    --radius-sm: calc(var(--radius) - 4px);
+    --radius-md: calc(var(--radius) - 2px);
+    --radius-lg: var(--radius);
+    --radius-xl: calc(var(--radius) + 4px);
+    --color-sidebar: var(--sidebar);
+    --color-sidebar-foreground: var(--sidebar-foreground);
+    --color-sidebar-primary: var(--sidebar-primary);
+    --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+    --color-sidebar-accent: var(--sidebar-accent);
+    --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+    --color-sidebar-border: var(--sidebar-border);
+    --color-sidebar-ring: var(--sidebar-ring);
+  }
 }
-
-
 
 @layer base {
   * {
@@ -113,31 +111,30 @@
   }
 }
 
-  /* Custom animations */
-  .animate-float {
-    animation: float 6s ease-in-out infinite;
-  }
+/* Custom animations */
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
 
-  .animate-glow {
-    animation: glow 2s ease-in-out infinite alternate;
-  }
+.animate-glow {
+  animation: glow 2s ease-in-out infinite alternate;
+}
 
-  .animate-slide-up {
-    animation: slideUp 0.8s ease-out forwards;
-  }
+.animate-slide-up {
+  animation: slideUp 0.8s ease-out forwards;
+}
 
-  .animate-fade-in {
-    animation: fadeIn 1s ease-out forwards;
-  }
+.animate-fade-in {
+  animation: fadeIn 1s ease-out forwards;
+}
 
-  .animate-scale-in {
-    animation: scaleIn 0.6s ease-out forwards;
-  }
+.animate-scale-in {
+  animation: scaleIn 0.6s ease-out forwards;
+}
 
-  .animate-bounce {
-    animation: bounce 2s ease-in-out;
-  }
-
+.animate-bounce {
+  animation: bounce 2s ease-in-out;
+}
 
 @keyframes float {
   0%,
@@ -224,10 +221,634 @@ html {
 }
 
 .gradient-card {
-  background: linear-gradient(135deg, rgba(236, 254, 255, 0.8) 0%, rgba(255, 255, 255, 0.9) 100%);
+  background: linear-gradient(
+    135deg,
+    rgba(236, 254, 255, 0.8) 0%,
+    rgba(255, 255, 255, 0.9) 100%
+  );
 }
 
 .dark .gradient-card {
-  background: linear-gradient(135deg, rgba(30, 41, 59, 0.8) 0%, rgba(51, 65, 85, 0.9) 100%);
+  background: linear-gradient(
+    135deg,
+    rgba(30, 41, 59, 0.8) 0%,
+    rgba(51, 65, 85, 0.9) 100%
+  );
 }
 
+/***************************************************
+ * Generated by SVG Artista on 11/7/2025, 9:32:44 PM
+ * MIT license (https://opensource.org/licenses/MIT)
+ * W. https://svgartista.net
+ **************************************************/
+
+svg .hero-icon-1 {
+  stroke-dashoffset: 2174.28564453125px;
+  stroke-dasharray: 2174.28564453125px;
+  -webkit-transition: stroke-dashoffset 1s
+    cubic-bezier(0.95, 0.05, 0.795, 0.035) 0s;
+  transition: stroke-dashoffset 1s cubic-bezier(0.95, 0.05, 0.795, 0.035) 0s;
+}
+
+svg.active .hero-icon-1 {
+  stroke-dashoffset: 4348.5712890625px;
+}
+
+svg .hero-icon-2 {
+  stroke-dashoffset: 2091.5537109375px;
+  stroke-dasharray: 2091.5537109375px;
+  -webkit-transition: stroke-dashoffset 1s
+    cubic-bezier(0.95, 0.05, 0.795, 0.035) 0.12s;
+  transition: stroke-dashoffset 1s cubic-bezier(0.95, 0.05, 0.795, 0.035) 0.12s;
+}
+
+svg.active .hero-icon-2 {
+  stroke-dashoffset: 4183.107421875px;
+}
+
+svg .hero-icon-3 {
+  stroke-dashoffset: 2009.3463134765625px;
+  stroke-dasharray: 2009.3463134765625px;
+  -webkit-transition: stroke-dashoffset 1s
+    cubic-bezier(0.95, 0.05, 0.795, 0.035) 0.24s;
+  transition: stroke-dashoffset 1s cubic-bezier(0.95, 0.05, 0.795, 0.035) 0.24s;
+}
+
+svg.active .hero-icon-3 {
+  stroke-dashoffset: 4018.692626953125px;
+}
+
+svg .hero-icon-4 {
+  stroke-dashoffset: 1926.5753173828125px;
+  stroke-dasharray: 1926.5753173828125px;
+  -webkit-transition: stroke-dashoffset 1s
+    cubic-bezier(0.95, 0.05, 0.795, 0.035) 0.36s;
+  transition: stroke-dashoffset 1s cubic-bezier(0.95, 0.05, 0.795, 0.035) 0.36s;
+}
+
+svg.active .hero-icon-4 {
+  stroke-dashoffset: 3853.150634765625px;
+}
+
+svg .hero-icon-5 {
+  stroke-dashoffset: 1860.4779052734375px;
+  stroke-dasharray: 1860.4779052734375px;
+  -webkit-transition: stroke-dashoffset 1s
+    cubic-bezier(0.95, 0.05, 0.795, 0.035) 0.48s;
+  transition: stroke-dashoffset 1s cubic-bezier(0.95, 0.05, 0.795, 0.035) 0.48s;
+}
+
+svg.active .hero-icon-5 {
+  stroke-dashoffset: 3720.955810546875px;
+}
+
+svg .hero-icon-6 {
+  stroke-dashoffset: 1750.0299072265625px;
+  stroke-dasharray: 1750.0299072265625px;
+  -webkit-transition: stroke-dashoffset 1s
+    cubic-bezier(0.95, 0.05, 0.795, 0.035) 0.6s;
+  transition: stroke-dashoffset 1s cubic-bezier(0.95, 0.05, 0.795, 0.035) 0.6s;
+}
+
+svg.active .hero-icon-6 {
+  stroke-dashoffset: 3500.059814453125px;
+}
+
+svg .hero-icon-7 {
+  stroke-dashoffset: 1665.5262451171875px;
+  stroke-dasharray: 1665.5262451171875px;
+  -webkit-transition: stroke-dashoffset 1s
+    cubic-bezier(0.95, 0.05, 0.795, 0.035) 0.72s;
+  transition: stroke-dashoffset 1s cubic-bezier(0.95, 0.05, 0.795, 0.035) 0.72s;
+}
+
+svg.active .hero-icon-7 {
+  stroke-dashoffset: 3331.052490234375px;
+}
+
+svg .hero-icon-8 {
+  stroke-dashoffset: 1580.5731201171875px;
+  stroke-dasharray: 1580.5731201171875px;
+  -webkit-transition: stroke-dashoffset 1s
+    cubic-bezier(0.95, 0.05, 0.795, 0.035) 0.84s;
+  transition: stroke-dashoffset 1s cubic-bezier(0.95, 0.05, 0.795, 0.035) 0.84s;
+}
+
+svg.active .hero-icon-8 {
+  stroke-dashoffset: 3161.146240234375px;
+}
+
+svg .hero-icon-9 {
+  stroke-dashoffset: 1495.382568359375px;
+  stroke-dasharray: 1495.382568359375px;
+  -webkit-transition: stroke-dashoffset 1s
+    cubic-bezier(0.95, 0.05, 0.795, 0.035) 0.96s;
+  transition: stroke-dashoffset 1s cubic-bezier(0.95, 0.05, 0.795, 0.035) 0.96s;
+}
+
+svg.active .hero-icon-9 {
+  stroke-dashoffset: 2990.76513671875px;
+}
+
+svg .hero-icon-10 {
+  stroke-dashoffset: 1428.8785400390625px;
+  stroke-dasharray: 1428.8785400390625px;
+  -webkit-transition: stroke-dashoffset 1s
+    cubic-bezier(0.95, 0.05, 0.795, 0.035) 1.08s;
+  transition: stroke-dashoffset 1s cubic-bezier(0.95, 0.05, 0.795, 0.035) 1.08s;
+}
+
+svg.active .hero-icon-10 {
+  stroke-dashoffset: 2857.757080078125px;
+}
+
+svg .hero-icon-11 {
+  stroke-dashoffset: 1340.7303466796875px;
+  stroke-dasharray: 1340.7303466796875px;
+  -webkit-transition: stroke-dashoffset 1s
+    cubic-bezier(0.95, 0.05, 0.795, 0.035) 1.2s;
+  transition: stroke-dashoffset 1s cubic-bezier(0.95, 0.05, 0.795, 0.035) 1.2s;
+}
+
+svg.active .hero-icon-11 {
+  stroke-dashoffset: 2681.460693359375px;
+}
+
+svg .hero-icon-12 {
+  stroke-dashoffset: 1252.635986328125px;
+  stroke-dasharray: 1252.635986328125px;
+  -webkit-transition: stroke-dashoffset 1s
+    cubic-bezier(0.95, 0.05, 0.795, 0.035) 1.3199999999999998s;
+  transition: stroke-dashoffset 1s cubic-bezier(0.95, 0.05, 0.795, 0.035)
+    1.3199999999999998s;
+}
+
+svg.active .hero-icon-12 {
+  stroke-dashoffset: 2505.27197265625px;
+}
+
+svg .hero-icon-13 {
+  stroke-dashoffset: 1164.1973876953125px;
+  stroke-dasharray: 1164.1973876953125px;
+  -webkit-transition: stroke-dashoffset 1s
+    cubic-bezier(0.95, 0.05, 0.795, 0.035) 1.44s;
+  transition: stroke-dashoffset 1s cubic-bezier(0.95, 0.05, 0.795, 0.035) 1.44s;
+}
+
+svg.active .hero-icon-13 {
+  stroke-dashoffset: 2328.394775390625px;
+}
+
+svg .hero-icon-14 {
+  stroke-dashoffset: 1067.6500244140625px;
+  stroke-dasharray: 1067.6500244140625px;
+  -webkit-transition: stroke-dashoffset 1s
+    cubic-bezier(0.95, 0.05, 0.795, 0.035) 1.56s;
+  transition: stroke-dashoffset 1s cubic-bezier(0.95, 0.05, 0.795, 0.035) 1.56s;
+}
+
+svg.active .hero-icon-14 {
+  stroke-dashoffset: 2135.300048828125px;
+}
+
+svg .hero-icon-15 {
+  stroke-dashoffset: 966.3236694335938px;
+  stroke-dasharray: 966.3236694335938px;
+  -webkit-transition: stroke-dashoffset 1s
+    cubic-bezier(0.95, 0.05, 0.795, 0.035) 1.68s;
+  transition: stroke-dashoffset 1s cubic-bezier(0.95, 0.05, 0.795, 0.035) 1.68s;
+}
+
+svg.active .hero-icon-15 {
+  stroke-dashoffset: 1932.6473388671875px;
+}
+
+svg .hero-icon-16 {
+  stroke-dashoffset: 900.4380493164062px;
+  stroke-dasharray: 900.4380493164062px;
+  -webkit-transition: stroke-dashoffset 1s
+    cubic-bezier(0.95, 0.05, 0.795, 0.035) 1.7999999999999998s;
+  transition: stroke-dashoffset 1s cubic-bezier(0.95, 0.05, 0.795, 0.035)
+    1.7999999999999998s;
+}
+
+svg.active .hero-icon-16 {
+  stroke-dashoffset: 1800.8760986328125px;
+}
+
+svg .hero-icon-17 {
+  stroke-dashoffset: 812.2530517578125px;
+  stroke-dasharray: 812.2530517578125px;
+  -webkit-transition: stroke-dashoffset 1s
+    cubic-bezier(0.95, 0.05, 0.795, 0.035) 1.92s;
+  transition: stroke-dashoffset 1s cubic-bezier(0.95, 0.05, 0.795, 0.035) 1.92s;
+}
+
+svg.active .hero-icon-17 {
+  stroke-dashoffset: 1624.506103515625px;
+}
+
+svg .hero-icon-18 {
+  stroke-dashoffset: 696.9942626953125px;
+  stroke-dasharray: 696.9942626953125px;
+  -webkit-transition: stroke-dashoffset 1s
+    cubic-bezier(0.95, 0.05, 0.795, 0.035) 2.04s;
+  transition: stroke-dashoffset 1s cubic-bezier(0.95, 0.05, 0.795, 0.035) 2.04s;
+}
+
+svg.active .hero-icon-18 {
+  stroke-dashoffset: 1393.988525390625px;
+}
+
+svg .hero-icon-19 {
+  stroke-dashoffset: 603.9424438476562px;
+  stroke-dasharray: 603.9424438476562px;
+  -webkit-transition: stroke-dashoffset 1s
+    cubic-bezier(0.95, 0.05, 0.795, 0.035) 2.16s;
+  transition: stroke-dashoffset 1s cubic-bezier(0.95, 0.05, 0.795, 0.035) 2.16s;
+}
+
+svg.active .hero-icon-19 {
+  stroke-dashoffset: 1207.8848876953125px;
+}
+
+svg .hero-icon-20 {
+  stroke-dashoffset: 523.7699584960938px;
+  stroke-dasharray: 523.7699584960938px;
+  -webkit-transition: stroke-dashoffset 1s
+    cubic-bezier(0.95, 0.05, 0.795, 0.035) 2.28s;
+  transition: stroke-dashoffset 1s cubic-bezier(0.95, 0.05, 0.795, 0.035) 2.28s;
+}
+
+svg.active .hero-icon-20 {
+  stroke-dashoffset: 1047.5399169921875px;
+}
+
+svg .hero-icon-21 {
+  stroke-dashoffset: 439.61102294921875px;
+  stroke-dasharray: 439.61102294921875px;
+  -webkit-transition: stroke-dashoffset 1s
+    cubic-bezier(0.95, 0.05, 0.795, 0.035) 2.4s;
+  transition: stroke-dashoffset 1s cubic-bezier(0.95, 0.05, 0.795, 0.035) 2.4s;
+}
+
+svg.active .hero-icon-21 {
+  stroke-dashoffset: 879.2220458984375px;
+}
+
+svg .hero-icon-22 {
+  stroke-dashoffset: 366.5466003417969px;
+  stroke-dasharray: 366.5466003417969px;
+  -webkit-transition: stroke-dashoffset 1s
+    cubic-bezier(0.95, 0.05, 0.795, 0.035) 2.52s;
+  transition: stroke-dashoffset 1s cubic-bezier(0.95, 0.05, 0.795, 0.035) 2.52s;
+}
+
+svg.active .hero-icon-22 {
+  stroke-dashoffset: 733.0932006835938px;
+}
+
+svg .hero-icon-23 {
+  stroke-dashoffset: 284.5176086425781px;
+  stroke-dasharray: 284.5176086425781px;
+  -webkit-transition: stroke-dashoffset 1s
+    cubic-bezier(0.95, 0.05, 0.795, 0.035) 2.6399999999999997s;
+  transition: stroke-dashoffset 1s cubic-bezier(0.95, 0.05, 0.795, 0.035)
+    2.6399999999999997s;
+}
+
+svg.active .hero-icon-23 {
+  stroke-dashoffset: 569.0352172851562px;
+}
+
+svg .hero-icon-24 {
+  stroke-dashoffset: 207.7889404296875px;
+  stroke-dasharray: 207.7889404296875px;
+  -webkit-transition: stroke-dashoffset 1s
+    cubic-bezier(0.95, 0.05, 0.795, 0.035) 2.76s;
+  transition: stroke-dashoffset 1s cubic-bezier(0.95, 0.05, 0.795, 0.035) 2.76s;
+}
+
+svg.active .hero-icon-24 {
+  stroke-dashoffset: 415.577880859375px;
+}
+
+svg .hero-icon-25 {
+  stroke-dashoffset: 139.72848510742188px;
+  stroke-dasharray: 139.72848510742188px;
+  -webkit-transition: stroke-dashoffset 1s
+    cubic-bezier(0.95, 0.05, 0.795, 0.035) 2.88s;
+  transition: stroke-dashoffset 1s cubic-bezier(0.95, 0.05, 0.795, 0.035) 2.88s;
+}
+
+svg.active .hero-icon-25 {
+  stroke-dashoffset: 279.45697021484375px;
+}
+/***************************************************
+ * Generated by SVG Artista on 11/7/2025, 9:32:44 PM
+ * MIT license (https://opensource.org/licenses/MIT)
+ * W. https://svgartista.net
+ **************************************************/
+
+svg .hero-icon-1 {
+  stroke-dashoffset: 2174.28564453125px;
+  stroke-dasharray: 2174.28564453125px;
+  -webkit-transition: stroke-dashoffset 1s
+    cubic-bezier(0.95, 0.05, 0.795, 0.035) 0s;
+  transition: stroke-dashoffset 1s cubic-bezier(0.95, 0.05, 0.795, 0.035) 0s;
+}
+
+svg.active .hero-icon-1 {
+  stroke-dashoffset: 4348.5712890625px;
+}
+
+svg .hero-icon-2 {
+  stroke-dashoffset: 2091.5537109375px;
+  stroke-dasharray: 2091.5537109375px;
+  -webkit-transition: stroke-dashoffset 1s
+    cubic-bezier(0.95, 0.05, 0.795, 0.035) 0.12s;
+  transition: stroke-dashoffset 1s cubic-bezier(0.95, 0.05, 0.795, 0.035) 0.12s;
+}
+
+svg.active .hero-icon-2 {
+  stroke-dashoffset: 4183.107421875px;
+}
+
+svg .hero-icon-3 {
+  stroke-dashoffset: 2009.3463134765625px;
+  stroke-dasharray: 2009.3463134765625px;
+  -webkit-transition: stroke-dashoffset 1s
+    cubic-bezier(0.95, 0.05, 0.795, 0.035) 0.24s;
+  transition: stroke-dashoffset 1s cubic-bezier(0.95, 0.05, 0.795, 0.035) 0.24s;
+}
+
+svg.active .hero-icon-3 {
+  stroke-dashoffset: 4018.692626953125px;
+}
+
+svg .hero-icon-4 {
+  stroke-dashoffset: 1926.5753173828125px;
+  stroke-dasharray: 1926.5753173828125px;
+  -webkit-transition: stroke-dashoffset 1s
+    cubic-bezier(0.95, 0.05, 0.795, 0.035) 0.36s;
+  transition: stroke-dashoffset 1s cubic-bezier(0.95, 0.05, 0.795, 0.035) 0.36s;
+}
+
+svg.active .hero-icon-4 {
+  stroke-dashoffset: 3853.150634765625px;
+}
+
+svg .hero-icon-5 {
+  stroke-dashoffset: 1860.4779052734375px;
+  stroke-dasharray: 1860.4779052734375px;
+  -webkit-transition: stroke-dashoffset 1s
+    cubic-bezier(0.95, 0.05, 0.795, 0.035) 0.48s;
+  transition: stroke-dashoffset 1s cubic-bezier(0.95, 0.05, 0.795, 0.035) 0.48s;
+}
+
+svg.active .hero-icon-5 {
+  stroke-dashoffset: 3720.955810546875px;
+}
+
+svg .hero-icon-6 {
+  stroke-dashoffset: 1750.0299072265625px;
+  stroke-dasharray: 1750.0299072265625px;
+  -webkit-transition: stroke-dashoffset 1s
+    cubic-bezier(0.95, 0.05, 0.795, 0.035) 0.6s;
+  transition: stroke-dashoffset 1s cubic-bezier(0.95, 0.05, 0.795, 0.035) 0.6s;
+}
+
+svg.active .hero-icon-6 {
+  stroke-dashoffset: 3500.059814453125px;
+}
+
+svg .hero-icon-7 {
+  stroke-dashoffset: 1665.5262451171875px;
+  stroke-dasharray: 1665.5262451171875px;
+  -webkit-transition: stroke-dashoffset 1s
+    cubic-bezier(0.95, 0.05, 0.795, 0.035) 0.72s;
+  transition: stroke-dashoffset 1s cubic-bezier(0.95, 0.05, 0.795, 0.035) 0.72s;
+}
+
+svg.active .hero-icon-7 {
+  stroke-dashoffset: 3331.052490234375px;
+}
+
+svg .hero-icon-8 {
+  stroke-dashoffset: 1580.5731201171875px;
+  stroke-dasharray: 1580.5731201171875px;
+  -webkit-transition: stroke-dashoffset 1s
+    cubic-bezier(0.95, 0.05, 0.795, 0.035) 0.84s;
+  transition: stroke-dashoffset 1s cubic-bezier(0.95, 0.05, 0.795, 0.035) 0.84s;
+}
+
+svg.active .hero-icon-8 {
+  stroke-dashoffset: 3161.146240234375px;
+}
+
+svg .hero-icon-9 {
+  stroke-dashoffset: 1495.382568359375px;
+  stroke-dasharray: 1495.382568359375px;
+  -webkit-transition: stroke-dashoffset 1s
+    cubic-bezier(0.95, 0.05, 0.795, 0.035) 0.96s;
+  transition: stroke-dashoffset 1s cubic-bezier(0.95, 0.05, 0.795, 0.035) 0.96s;
+}
+
+svg.active .hero-icon-9 {
+  stroke-dashoffset: 2990.76513671875px;
+}
+
+svg .hero-icon-10 {
+  stroke-dashoffset: 1428.8785400390625px;
+  stroke-dasharray: 1428.8785400390625px;
+  -webkit-transition: stroke-dashoffset 1s
+    cubic-bezier(0.95, 0.05, 0.795, 0.035) 1.08s;
+  transition: stroke-dashoffset 1s cubic-bezier(0.95, 0.05, 0.795, 0.035) 1.08s;
+}
+
+svg.active .hero-icon-10 {
+  stroke-dashoffset: 2857.757080078125px;
+}
+
+svg .hero-icon-11 {
+  stroke-dashoffset: 1340.7303466796875px;
+  stroke-dasharray: 1340.7303466796875px;
+  -webkit-transition: stroke-dashoffset 1s
+    cubic-bezier(0.95, 0.05, 0.795, 0.035) 1.2s;
+  transition: stroke-dashoffset 1s cubic-bezier(0.95, 0.05, 0.795, 0.035) 1.2s;
+}
+
+svg.active .hero-icon-11 {
+  stroke-dashoffset: 2681.460693359375px;
+}
+
+svg .hero-icon-12 {
+  stroke-dashoffset: 1252.635986328125px;
+  stroke-dasharray: 1252.635986328125px;
+  -webkit-transition: stroke-dashoffset 1s
+    cubic-bezier(0.95, 0.05, 0.795, 0.035) 1.3199999999999998s;
+  transition: stroke-dashoffset 1s cubic-bezier(0.95, 0.05, 0.795, 0.035)
+    1.3199999999999998s;
+}
+
+svg.active .hero-icon-12 {
+  stroke-dashoffset: 2505.27197265625px;
+}
+
+svg .hero-icon-13 {
+  stroke-dashoffset: 1164.1973876953125px;
+  stroke-dasharray: 1164.1973876953125px;
+  -webkit-transition: stroke-dashoffset 1s
+    cubic-bezier(0.95, 0.05, 0.795, 0.035) 1.44s;
+  transition: stroke-dashoffset 1s cubic-bezier(0.95, 0.05, 0.795, 0.035) 1.44s;
+}
+
+svg.active .hero-icon-13 {
+  stroke-dashoffset: 2328.394775390625px;
+}
+
+svg .hero-icon-14 {
+  stroke-dashoffset: 1067.6500244140625px;
+  stroke-dasharray: 1067.6500244140625px;
+  -webkit-transition: stroke-dashoffset 1s
+    cubic-bezier(0.95, 0.05, 0.795, 0.035) 1.56s;
+  transition: stroke-dashoffset 1s cubic-bezier(0.95, 0.05, 0.795, 0.035) 1.56s;
+}
+
+svg.active .hero-icon-14 {
+  stroke-dashoffset: 2135.300048828125px;
+}
+
+svg .hero-icon-15 {
+  stroke-dashoffset: 966.3236694335938px;
+  stroke-dasharray: 966.3236694335938px;
+  -webkit-transition: stroke-dashoffset 1s
+    cubic-bezier(0.95, 0.05, 0.795, 0.035) 1.68s;
+  transition: stroke-dashoffset 1s cubic-bezier(0.95, 0.05, 0.795, 0.035) 1.68s;
+}
+
+svg.active .hero-icon-15 {
+  stroke-dashoffset: 1932.6473388671875px;
+}
+
+svg .hero-icon-16 {
+  stroke-dashoffset: 900.4380493164062px;
+  stroke-dasharray: 900.4380493164062px;
+  -webkit-transition: stroke-dashoffset 1s
+    cubic-bezier(0.95, 0.05, 0.795, 0.035) 1.7999999999999998s;
+  transition: stroke-dashoffset 1s cubic-bezier(0.95, 0.05, 0.795, 0.035)
+    1.7999999999999998s;
+}
+
+svg.active .hero-icon-16 {
+  stroke-dashoffset: 1800.8760986328125px;
+}
+
+svg .hero-icon-17 {
+  stroke-dashoffset: 812.2530517578125px;
+  stroke-dasharray: 812.2530517578125px;
+  -webkit-transition: stroke-dashoffset 1s
+    cubic-bezier(0.95, 0.05, 0.795, 0.035) 1.92s;
+  transition: stroke-dashoffset 1s cubic-bezier(0.95, 0.05, 0.795, 0.035) 1.92s;
+}
+
+svg.active .hero-icon-17 {
+  stroke-dashoffset: 1624.506103515625px;
+}
+
+svg .hero-icon-18 {
+  stroke-dashoffset: 696.9942626953125px;
+  stroke-dasharray: 696.9942626953125px;
+  -webkit-transition: stroke-dashoffset 1s
+    cubic-bezier(0.95, 0.05, 0.795, 0.035) 2.04s;
+  transition: stroke-dashoffset 1s cubic-bezier(0.95, 0.05, 0.795, 0.035) 2.04s;
+}
+
+svg.active .hero-icon-18 {
+  stroke-dashoffset: 1393.988525390625px;
+}
+
+svg .hero-icon-19 {
+  stroke-dashoffset: 603.9424438476562px;
+  stroke-dasharray: 603.9424438476562px;
+  -webkit-transition: stroke-dashoffset 1s
+    cubic-bezier(0.95, 0.05, 0.795, 0.035) 2.16s;
+  transition: stroke-dashoffset 1s cubic-bezier(0.95, 0.05, 0.795, 0.035) 2.16s;
+}
+
+svg.active .hero-icon-19 {
+  stroke-dashoffset: 1207.8848876953125px;
+}
+
+svg .hero-icon-20 {
+  stroke-dashoffset: 523.7699584960938px;
+  stroke-dasharray: 523.7699584960938px;
+  -webkit-transition: stroke-dashoffset 1s
+    cubic-bezier(0.95, 0.05, 0.795, 0.035) 2.28s;
+  transition: stroke-dashoffset 1s cubic-bezier(0.95, 0.05, 0.795, 0.035) 2.28s;
+}
+
+svg.active .hero-icon-20 {
+  stroke-dashoffset: 1047.5399169921875px;
+}
+
+svg .hero-icon-21 {
+  stroke-dashoffset: 439.61102294921875px;
+  stroke-dasharray: 439.61102294921875px;
+  -webkit-transition: stroke-dashoffset 1s
+    cubic-bezier(0.95, 0.05, 0.795, 0.035) 2.4s;
+  transition: stroke-dashoffset 1s cubic-bezier(0.95, 0.05, 0.795, 0.035) 2.4s;
+}
+
+svg.active .hero-icon-21 {
+  stroke-dashoffset: 879.2220458984375px;
+}
+
+svg .hero-icon-22 {
+  stroke-dashoffset: 366.5466003417969px;
+  stroke-dasharray: 366.5466003417969px;
+  -webkit-transition: stroke-dashoffset 1s
+    cubic-bezier(0.95, 0.05, 0.795, 0.035) 2.52s;
+  transition: stroke-dashoffset 1s cubic-bezier(0.95, 0.05, 0.795, 0.035) 2.52s;
+}
+
+svg.active .hero-icon-22 {
+  stroke-dashoffset: 733.0932006835938px;
+}
+
+svg .hero-icon-23 {
+  stroke-dashoffset: 284.5176086425781px;
+  stroke-dasharray: 284.5176086425781px;
+  -webkit-transition: stroke-dashoffset 1s
+    cubic-bezier(0.95, 0.05, 0.795, 0.035) 2.6399999999999997s;
+  transition: stroke-dashoffset 1s cubic-bezier(0.95, 0.05, 0.795, 0.035)
+    2.6399999999999997s;
+}
+
+svg.active .hero-icon-23 {
+  stroke-dashoffset: 569.0352172851562px;
+}
+
+svg .hero-icon-24 {
+  stroke-dashoffset: 207.7889404296875px;
+  stroke-dasharray: 207.7889404296875px;
+  -webkit-transition: stroke-dashoffset 1s
+    cubic-bezier(0.95, 0.05, 0.795, 0.035) 2.76s;
+  transition: stroke-dashoffset 1s cubic-bezier(0.95, 0.05, 0.795, 0.035) 2.76s;
+}
+
+svg.active .hero-icon-24 {
+  stroke-dashoffset: 415.577880859375px;
+}
+
+svg .hero-icon-25 {
+  stroke-dashoffset: 139.72848510742188px;
+  stroke-dasharray: 139.72848510742188px;
+  -webkit-transition: stroke-dashoffset 1s
+    cubic-bezier(0.95, 0.05, 0.795, 0.035) 2.88s;
+  transition: stroke-dashoffset 1s cubic-bezier(0.95, 0.05, 0.795, 0.035) 2.88s;
+}
+
+svg.active .hero-icon-25 {
+  stroke-dashoffset: 279.45697021484375px;
+}
