@@ -27,6 +27,7 @@ import { useRouter } from "next/navigation";
 import { GlowingEffect } from "@/components/ui/glowing-effect";
 import ProjectsShowcase from "@/components/ProjectShowcase";
 import { projects } from "@/lib/projects";
+import { WavyBackground } from "@/components/ui/wavy-background";
 
 const teamMembers = [
   {
@@ -106,60 +107,61 @@ export default function SirFasTechHomepage() {
 
       {/* Hero Section */}
 
-      <section
-        className="relative py-48 px-4 overflow-hidden bg-cover bg-center"
-        style={{ backgroundImage: `url('/hero_section.svg')` }}
-      >
-        <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-secondary/5 to-accent/10 animate-pulse"></div>
-        <div
-          className="absolute inset-0 opacity-20"
-          style={{
-            backgroundImage: `radial-gradient(circle at 25% 25%, rgba(var(--primary), 0.1) 0%, transparent 50%), 
-                             radial-gradient(circle at 75% 75%, rgba(var(--secondary), 0.1) 0%, transparent 50%)`,
-            transform: `translateY(${scrollY * 0.5}px)`,
-          }}
-        ></div>
-        <div className="container mx-auto text-center relative z-10">
-          <div>
-            <h1 className="text-5xl md:text-7xl font-bold mb-6 text-balance">
-              <span
-                className="inline-block animate-bounce"
-                style={{ animationDelay: "0s" }}
-              >
-                Welcome
-              </span>{" "}
-              <span
-                className="inline-block animate-bounce"
-                style={{ animationDelay: "0.1s" }}
-              >
-                to
-              </span>{" "}
-              <span
-                className="inline-block bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text animate-bounce"
-                style={{ animationDelay: "0.2s" }}
-              >
-                SirFasTech
-              </span>
-            </h1>
-            <p
-              className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-3xl mx-auto text-pretty opacity-0 animate-fade-in"
-              style={{
-                animationDelay: "0.5s",
-                animationFillMode: "forwards",
-              }}
-            >
-              Delivering high-quality solutions with integrity and innovation
-            </p>
+      <section className="relative py-36 px-4 overflow-hidden bg-cover bg-center">
+        <WavyBackground className="max-w-4xl mx-auto pb-40" backgroundFill="white">
+          <div className="absolute inset-0 -z-10 will-change-transform">
           </div>
-          <Button
-            size="lg"
-            className="bg-primary hover:bg-primary/90 text-primary-foreground hover:scale-110 transition-all duration-500 shadow-lg hover:shadow-xl opacity-0 animate-fade-in"
-            style={{ animationDelay: "0.8s", animationFillMode: "forwards" }}
-            asChild
-          >
-            <a href="#contact">Get in Touch</a>
-          </Button>
-        </div>
+          <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-secondary/5 to-accent/10 animate-pulse"></div>
+          <div
+            className="absolute inset-0 opacity-20"
+            style={{
+              backgroundImage: `radial-gradient(circle at 25% 25%, rgba(var(--primary), 0.1) 0%, transparent 50%), 
+                             radial-gradient(circle at 75% 75%, rgba(var(--secondary), 0.1) 0%, transparent 50%)`,
+              transform: `translateY(${scrollY * 0.5}px)`,
+            }}
+          ></div>
+          <div className="container mx-auto text-center relative z-10">
+            <div>
+              <h1 className="text-5xl md:text-7xl font-bold mb-6 text-balance">
+                <span
+                  className="inline-block animate-bounce"
+                  style={{ animationDelay: "0s" }}
+                >
+                  Welcome
+                </span>{" "}
+                <span
+                  className="inline-block animate-bounce"
+                  style={{ animationDelay: "0.1s" }}
+                >
+                  to
+                </span>{" "}
+                <span
+                  className="inline-block bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text animate-bounce"
+                  style={{ animationDelay: "0.2s" }}
+                >
+                  SirFasTech
+                </span>
+              </h1>
+              <p
+                className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-3xl mx-auto text-pretty opacity-0 animate-fade-in"
+                style={{
+                  animationDelay: "0.5s",
+                  animationFillMode: "forwards",
+                }}
+              >
+                Delivering high-quality solutions with integrity and innovation
+              </p>
+            </div>
+            <Button
+              size="lg"
+              className="bg-primary hover:bg-primary/90 text-primary-foreground hover:scale-110 transition-all duration-500 shadow-lg hover:shadow-xl opacity-0 animate-fade-in"
+              style={{ animationDelay: "0.8s", animationFillMode: "forwards" }}
+              asChild
+            >
+              <a href="#contact">Get in Touch</a>
+            </Button>
+          </div>
+        </WavyBackground>
       </section>
 
       {/* Services Section */}
@@ -196,13 +198,6 @@ export default function SirFasTechHomepage() {
                 className="gradient-card border-0 hover:shadow-xl transition-all duration-500 hover:scale-105 hover:-translate-y-2 animate-fade-in group text-2xl"
                 style={{ animationDelay: `${index * 0.2}s` }}
               >
-                <GlowingEffect
-                  spread={40}
-                  glow={true}
-                  disabled={false}
-                  proximity={64}
-                  inactiveZone={0.01}
-                />
                 <CardHeader>
                   <service.icon className="w-12 h-12 text-accent mb-4 group-hover:animate-float" />
                   <CardTitle className=" group-hover:text-accent transition-colors duration-300">
