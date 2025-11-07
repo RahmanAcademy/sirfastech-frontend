@@ -20,7 +20,7 @@ export const projects: Project[] = [
       "Automated summaries, token budgeting, and PR review helpers to speed up code reviews and align team context.",
     technologies: ["Next.js", "Django", "Postgres", "Celery"],
     deployment: "Cloud / GitHub App",
-    url: "#", // replace with your live link
+    url: "https://Commitlyzer.com/",
     image: "/projects/commitlyzer_landing_page.png",
     accent: "blue",
     background: "bg-blue-400",
