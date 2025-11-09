@@ -137,10 +137,10 @@ export default function ProjectsShowcase({
         </h2>
 
         {/* mobile: scrollable row */}
-        <div className="md:hidden -mx-4 px-4 overflow-x-auto snap-x snap-mandatory scrollbar-none">
-          <div className="flex gap-4 w-max">
+        <div className="md:hidden mx-4 px-4">
+          <div className="grid grid-cols-1 gap-4">
             {projects.map((p, i) => (
-              <div key={p.name} className="snap-center min-w-[85%]">
+              <div key={p.name} className="min-w-[85%]">
                 <ProjectCard p={p} index={i} />
               </div>
             ))}
