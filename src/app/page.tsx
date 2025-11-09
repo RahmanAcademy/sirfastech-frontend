@@ -1,14 +1,33 @@
-"use client"
+"use client";
 
-import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
-import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel"
-import { Mail, Phone, Linkedin, Code, Brain, Users, Database, ExternalLink } from "lucide-react"
-import Image from "next/image"
-import Testimonials from "@/app/components/Testinomials"
-import { useEffect, useState } from "react"
-import { useRouter } from "next/navigation"
+import { Button } from "@/components/ui/button";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+
+import {
+  Mail,
+  Phone,
+  Linkedin,
+  Code,
+  Brain,
+  Users,
+  Database,
+  ExternalLink,
+} from "lucide-react";
+import Image from "next/image";
+import Testimonials from "@/app/components/Testinomials";
+import { useEffect, useState } from "react";
+import { useRouter } from "next/navigation";
+import { GlowingEffect } from "@/components/ui/glowing-effect";
+import ProjectsShowcase from "@/components/ProjectShowcase";
+import { projects } from "@/lib/projects";
+import { WavyBackground } from "@/components/ui/wavy-background";
 
 const teamMembers = [
   {
@@ -43,55 +62,16 @@ const teamMembers = [
     profilePic:
       "https://media.licdn.com/dms/image/v2/D4D03AQEI8_wOdyOJlA/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1729431760222?e=1759968000&v=beta&t=xtGz4MhrIbt3MHv8y7TDZhJdsSp6dm0A9X-B9JtRIiw",
   },
-]
-
-const projects = [
-  {
-    name: "Easymeal",
-    description: "A robust CRUD application for managing vending machines",
-    details:
-      "Easymeal automates various processes essential to vending machine owners, including refill management, encashment and sales monitoring, route planning, maintenance scheduling, and employee management.",
-    technologies: ["Django", "Celery", "React"],
-    deployment: "AWS",
-    url:"#"
-  },
-  {
-    name: "RahmanAcademy",
-    description: "An interactive learning platform for medical students",
-    details:
-      "RahmanAcademy provides topic-based MCQs, performance ratings, and comprehensive MCQ management for medical students.",
-    technologies: ["React", "Django"],
-    deployment: "Heroku",
-    url:"#"
-  },
-  {
-    name: "Snowflake Warehousing System",
-    description: "A comprehensive data warehousing solution",
-    details:
-      "Developed at Seed Labs, this system efficiently managed the transport of over one billion rows of data, resulting in significant cost savings.",
-    technologies: ["Python", "Snowflake"],
-    deployment: "Snowflake",
-    url:"#"
-  },
-    {
-    name: "Movielyzer",
-    description: "A video analysis and manipulation tool",
-    details:
-      "Search through videos like text, summarize hours in seconds, and add AI narration that sounds human. The future of video is here.",
-    technologies: ["Django", "React"],
-    deployment: "AWS",
-    url:"https://movielyzer.com/"
-  },
-]
+];
 
 export default function SirFasTechHomepage() {
-  const [scrollY, setScrollY] = useState(0)
+  const [scrollY, setScrollY] = useState(0);
   const router = useRouter();
   useEffect(() => {
-    const handleScroll = () => setScrollY(window.scrollY)
-    window.addEventListener("scroll", handleScroll)
-    return () => window.removeEventListener("scroll", handleScroll)
-  }, [])
+    const handleScroll = () => setScrollY(window.scrollY);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
     <div className="min-h-screen bg-background">
@@ -103,7 +83,14 @@ export default function SirFasTechHomepage() {
               SirFasTech
             </div>
             <div className="hidden md:flex space-x-8">
-              {["Services", "About", "Team", "Projects", "Testimonials", "Contact"].map((item) => (
+              {[
+                "Services",
+                "About",
+                "Team",
+                "Projects",
+                "Testimonials",
+                "Contact",
+              ].map((item) => (
                 <a
                   key={item}
                   href={`#${item.toLowerCase()}`}
@@ -119,52 +106,70 @@ export default function SirFasTechHomepage() {
       </nav>
 
       {/* Hero Section */}
-      <section className="relative py-32 px-4 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-secondary/5 to-accent/10 animate-pulse"></div>
-        <div
-          className="absolute inset-0 opacity-20"
-          style={{
-            backgroundImage: `radial-gradient(circle at 25% 25%, rgba(var(--primary), 0.1) 0%, transparent 50%), 
+
+      <section className="relative py-36 px-4 overflow-hidden bg-cover bg-center">
+        <WavyBackground className="max-w-4xl mx-auto pb-40" backgroundFill="white">
+          <div className="absolute inset-0 -z-10 will-change-transform">
+          </div>
+          <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-secondary/5 to-accent/10 animate-pulse"></div>
+          <div
+            className="absolute inset-0 opacity-20"
+            style={{
+              backgroundImage: `radial-gradient(circle at 25% 25%, rgba(var(--primary), 0.1) 0%, transparent 50%), 
                              radial-gradient(circle at 75% 75%, rgba(var(--secondary), 0.1) 0%, transparent 50%)`,
-            transform: `translateY(${scrollY * 0.5}px)`,
-          }}
-        ></div>
-        <div className="container mx-auto text-center relative z-10">
-          <h1 className="text-5xl md:text-7xl font-bold mb-6 text-balance">
-            <span className="inline-block animate-bounce" style={{ animationDelay: "0s" }}>
-              Welcome
-            </span>{" "}
-            <span className="inline-block animate-bounce" style={{ animationDelay: "0.1s" }}>
-              to
-            </span>{" "}
-            <span
-              className="inline-block bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text animate-bounce"
-              style={{ animationDelay: "0.2s" }}
+              transform: `translateY(${scrollY * 0.5}px)`,
+            }}
+          ></div>
+          <div className="container mx-auto text-center relative z-10">
+            <div>
+              <h1 className="text-5xl md:text-7xl font-bold mb-6 text-balance">
+                <span
+                  className="inline-block animate-bounce"
+                  style={{ animationDelay: "0s" }}
+                >
+                  Welcome
+                </span>{" "}
+                <span
+                  className="inline-block animate-bounce"
+                  style={{ animationDelay: "0.1s" }}
+                >
+                  to
+                </span>{" "}
+                <span
+                  className="inline-block bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text animate-bounce"
+                  style={{ animationDelay: "0.2s" }}
+                >
+                  SirFasTech
+                </span>
+              </h1>
+              <p
+                className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-3xl mx-auto text-pretty opacity-0 animate-fade-in"
+                style={{
+                  animationDelay: "0.5s",
+                  animationFillMode: "forwards",
+                }}
+              >
+                Delivering high-quality solutions with integrity and innovation
+              </p>
+            </div>
+            <Button
+              size="lg"
+              className="bg-primary hover:bg-primary/90 text-primary-foreground hover:scale-110 transition-all duration-500 shadow-lg hover:shadow-xl opacity-0 animate-fade-in"
+              style={{ animationDelay: "0.8s", animationFillMode: "forwards" }}
+              asChild
             >
-              SirFasTech
-            </span>
-          </h1>
-          <p
-            className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-3xl mx-auto text-pretty opacity-0 animate-fade-in"
-            style={{ animationDelay: "0.5s", animationFillMode: "forwards" }}
-          >
-            Delivering high-quality solutions with integrity and innovation
-          </p>
-          <Button
-            size="lg"
-            className="bg-primary hover:bg-primary/90 text-primary-foreground hover:scale-110 transition-all duration-500 shadow-lg hover:shadow-xl opacity-0 animate-fade-in"
-            style={{ animationDelay: "0.8s", animationFillMode: "forwards" }}
-            asChild
-          >
-            <a href="#contact">Get in Touch</a>
-          </Button>
-        </div>
+              <a href="#contact">Get in Touch</a>
+            </Button>
+          </div>
+        </WavyBackground>
       </section>
 
       {/* Services Section */}
       <section id="services" className="py-20 px-4 bg-muted/30">
         <div className="container mx-auto">
-          <h2 className="text-4xl font-bold text-center mb-16 text-balance animate-slide-up">Our Services</h2>
+          <h2 className="text-4xl font-bold text-center mb-16 text-balance animate-slide-up">
+            Our Services
+          </h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {[
               {
@@ -221,14 +226,21 @@ export default function SirFasTechHomepage() {
                 className="rounded-2xl shadow-2xl hover:scale-105 transition-transform duration-500"
               />
             </div>
-            <div className="lg:w-1/2 animate-fade-in" style={{ animationDelay: "0.3s" }}>
+            <div
+              className="lg:w-1/2 animate-fade-in"
+              style={{ animationDelay: "0.3s" }}
+            >
               <h2 className="text-4xl font-bold mb-8 text-balance">About Us</h2>
               <p className="text-lg text-muted-foreground mb-6 text-pretty">
-                We come with rich experience in programming and have developed several applications in our career. We
-                have a good experience of data science, machine learning and software architecture. We love programming
-                and love to use programming to create a positive impact.
+                We come with rich experience in programming and have developed
+                several applications in our career. We have a good experience of
+                data science, machine learning and software architecture. We
+                love programming and love to use programming to create a
+                positive impact.
               </p>
-              <p className="text-lg text-muted-foreground mb-6">Our core values define our way of working:</p>
+              <p className="text-lg text-muted-foreground mb-6">
+                Our core values define our way of working:
+              </p>
 
               <div className="space-y-4">
                 {[
@@ -251,8 +263,12 @@ export default function SirFasTechHomepage() {
                   >
                     <div className="w-2 h-2 bg-accent rounded-full mt-2 animate-glow"></div>
                     <div>
-                      <h4 className="font-semibold text-accent mb-2">{value.title}</h4>
-                      <p className="text-muted-foreground text-lg">{value.desc}</p>
+                      <h4 className="font-semibold text-accent mb-2">
+                        {value.title}
+                      </h4>
+                      <p className="text-muted-foreground text-lg">
+                        {value.desc}
+                      </p>
                     </div>
                   </div>
                 ))}
@@ -265,7 +281,9 @@ export default function SirFasTechHomepage() {
       {/* Team Section */}
       <section id="team" className="py-20 px-4 bg-muted/30">
         <div className="container mx-auto">
-          <h2 className="text-4xl font-bold text-center mb-16 text-balance animate-slide-up">Our Team</h2>
+          <h2 className="text-4xl font-bold text-center mb-16 text-balance animate-slide-up">
+            Our Team
+          </h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {teamMembers.map((member, index) => (
               <Card
@@ -275,7 +293,10 @@ export default function SirFasTechHomepage() {
               >
                 <CardHeader>
                   <Avatar className="w-24 h-24 mx-auto mb-4 ring-4 ring-accent/20 group-hover:ring-accent/50 transition-all duration-300">
-                    <AvatarImage src={member.profilePic || "/placeholder.svg"} alt={member.name} />
+                    <AvatarImage
+                      src={member.profilePic || "/placeholder.svg"}
+                      alt={member.name}
+                    />
                     <AvatarFallback>
                       {member.name
                         .split(" ")
@@ -289,17 +310,32 @@ export default function SirFasTechHomepage() {
                   <CardDescription>{member.role}</CardDescription>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-lg text-muted-foreground mb-4 line-clamp-4">{member.bio}</p>
+                  <p className="text-lg text-muted-foreground mb-4 line-clamp-4">
+                    {member.bio}
+                  </p>
                   <Button
                     variant="outline"
                     size="sm"
                     className="hover:bg-accent hover:text-accent-foreground transition-all duration-300 bg-transparent"
                     asChild
                   >
-                    <a href={member.linkedin} target="_blank" rel="noopener noreferrer">
-                  <svg className="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                    <path fillRule="evenodd" d="M16.338 16.338H13.67V12.16c0-.995-.017-2.277-1.387-2.277-1.39 0-1.601 1.086-1.601 2.207v4.248H8.014v-8.59h2.559v1.174h.037c.356-.675 1.227-1.387 2.526-1.387 2.703 0 3.203 1.778 3.203 4.092v4.711zM5.005 6.575a1.548 1.548 0 11-.003-3.096 1.548 1.548 0 01.003 3.096zm-1.337 9.763H6.34v-8.59H3.667v8.59zM17.668 1H2.328C1.595 1 1 1.581 1 2.298v15.403C1 18.418 1.595 19 2.328 19h15.34c.734 0 1.332-.582 1.332-1.299V2.298C19 1.581 18.402 1 17.668 1z" clipRule="evenodd" />
-                  </svg>
+                    <a
+                      href={member.linkedin}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <svg
+                        className="w-5 h-5 mr-2"
+                        fill="currentColor"
+                        viewBox="0 0 20 20"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          fillRule="evenodd"
+                          d="M16.338 16.338H13.67V12.16c0-.995-.017-2.277-1.387-2.277-1.39 0-1.601 1.086-1.601 2.207v4.248H8.014v-8.59h2.559v1.174h.037c.356-.675 1.227-1.387 2.526-1.387 2.703 0 3.203 1.778 3.203 4.092v4.711zM5.005 6.575a1.548 1.548 0 11-.003-3.096 1.548 1.548 0 01.003 3.096zm-1.337 9.763H6.34v-8.59H3.667v8.59zM17.668 1H2.328C1.595 1 1 1.581 1 2.298v15.403C1 18.418 1.595 19 2.328 19h15.34c.734 0 1.332-.582 1.332-1.299V2.298C19 1.581 18.402 1 17.668 1z"
+                          clipRule="evenodd"
+                        />
+                      </svg>
                       LinkedIn
                     </a>
                   </Button>
@@ -311,75 +347,14 @@ export default function SirFasTechHomepage() {
       </section>
 
       {/* Projects Section */}
-      <section id="projects" className="py-20 px-4">
-        <div className="container mx-auto">
-          <h2 className="text-4xl font-bold text-center mb-16 text-balance animate-slide-up">Our Projects</h2>
-          <div className="w-full max-w-7xl mx-auto">
-            <Carousel
-              opts={{
-                align: "start",
-                loop: true,
-              }}
-              className="w-full"
-            >
-              <CarouselContent className="-ml-2 md:-ml-4">
-                {projects.map((project, index) => (
-                  <CarouselItem key={index} className="pl-2 md:pl-4 md:basis-1/2 lg:basis-1/3">
-                    <Card className="bg-gradient-to-br from-green-50 to-emerald-100 dark:from-green-950/20 dark:to-emerald-950/20 border-green-200 dark:border-green-800 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-[1.02] ">
-                      <CardHeader className="text-center pb-4">
-                        <CardTitle className="text-2xl font-bold text-green-900 dark:text-green-100 mb-2">
-                          {project.name}
-                        </CardTitle>
-                        <CardDescription className="text-green-700 dark:text-green-300 font-medium">
-                          {project.description}
-                        </CardDescription>
-                      </CardHeader>
-                      <CardContent className="p-6 pt-0 flex flex-col h-full">
-                        <p className="text-green-800 dark:text-green-200 text-lg leading-relaxed mb-4 flex-1">
-                          {project.details}
-                        </p>
-
-                        <div className="mb-4">
-                          <h4 className="font-semibold text-green-900 dark:text-green-100 mb-2 text-lg">
-                            Technologies:
-                          </h4>
-                          <div className="flex flex-wrap gap-1">
-                            {project.technologies.map((tech, techIndex) => (
-                              <span
-                                key={techIndex}
-                                className="inline-flex items-center rounded-full bg-green-200 dark:bg-green-800 px-2 py-1 text-md font-medium text-green-800 dark:text-green-200 border border-green-300 dark:border-green-700"
-                              >
-                                {tech}
-                              </span>
-                            ))}
-                          </div>
-                        </div>
-
-                        <div className="flex items-center justify-between mt-auto">
-                          <div>
-                            <span className="text-md text-green-600 dark:text-green-400">Deployed on: </span>
-                            <span className="font-semibold text-green-800 dark:text-green-200 text-sm">
-                              {project.deployment}
-                            </span>
-                          </div>
-                          <ExternalLink onClick={()=>router.push(project.url)} className="w-4 h-4 text-green-600 dark:text-green-400" />
-                        </div>
-                      </CardContent>
-                    </Card>
-                  </CarouselItem>
-                ))}
-              </CarouselContent>
-              <CarouselPrevious className="bg-green-100 hover:bg-green-200 dark:bg-green-900 dark:hover:bg-green-800 border-green-300 dark:border-green-700" />
-              <CarouselNext className="bg-green-100 hover:bg-green-200 dark:bg-green-900 dark:hover:bg-green-800 border-green-300 dark:border-green-700" />
-            </Carousel>
-          </div>
-        </div>
-      </section>
+      <ProjectsShowcase projects={projects} />
 
       {/* Testimonials Section */}
       <section id="testimonials" className="py-20 px-4 bg-muted/30">
         <div className="container mx-auto">
-          <h2 className="text-4xl font-bold text-center mb-16 text-balance animate-slide-up">Testimonials</h2>
+          <h2 className="text-4xl font-bold text-center mb-16 text-balance animate-slide-up">
+            Testimonials
+          </h2>
           <Testimonials />
         </div>
       </section>
@@ -389,12 +364,15 @@ export default function SirFasTechHomepage() {
         <div className="absolute inset-0 gradient-primary opacity-5 animate-float"></div>
         <div className="container mx-auto relative z-10">
           <div className="max-w-2xl mx-auto text-center">
-            <h2 className="text-4xl font-bold mb-8 text-balance animate-slide-up">Get in Touch</h2>
+            <h2 className="text-4xl font-bold mb-8 text-balance animate-slide-up">
+              Get in Touch
+            </h2>
             <p
               className="text-lg text-muted-foreground mb-12 text-pretty animate-fade-in"
               style={{ animationDelay: "0.2s" }}
             >
-              We&apos;re excited to hear from you and discuss how we can help with your project.
+              We&apos;re excited to hear from you and discuss how we can help
+              with your project.
             </p>
 
             <div className="space-y-6">
@@ -422,7 +400,11 @@ export default function SirFasTechHomepage() {
                 style={{ animationDelay: "0.6s" }}
                 asChild
               >
-                <a href="https://calendly.com/ibad2762/30min?month=2024-08" target="_blank" rel="noopener noreferrer">
+                <a
+                  href="https://calendly.com/ibad2762/30min?month=2024-08"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   <Phone className="w-4 h-4 mr-2" />
                   Schedule a 30-minute call
                   <ExternalLink className="w-4 h-4 ml-2" />
@@ -439,19 +421,36 @@ export default function SirFasTechHomepage() {
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="mb-4 md:mb-0 text-center md:text-left">
               <h3 className="text-2xl font-bold mb-2 ">SirFasTech</h3>
-              <p className="opacity-90">Delivering excellence in software development</p>
+              <p className="opacity-90">
+                Delivering excellence in software development
+              </p>
             </div>
             <div className="text-center md:text-right">
-              <h4 className="text-lg font-semibold mb-2">Connect with our founder</h4>
+              <h4 className="text-lg font-semibold mb-2">
+                Connect with our founder
+              </h4>
               <Button
                 variant="outline"
                 size="sm"
                 className="border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary transition-all duration-300 bg-transparent text-lg"
                 asChild
               >
-                <a href="https://www.linkedin.com/in/ibadski/" target="_blank" rel="noopener noreferrer">
-                  <svg className="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                    <path fillRule="evenodd" d="M16.338 16.338H13.67V12.16c0-.995-.017-2.277-1.387-2.277-1.39 0-1.601 1.086-1.601 2.207v4.248H8.014v-8.59h2.559v1.174h.037c.356-.675 1.227-1.387 2.526-1.387 2.703 0 3.203 1.778 3.203 4.092v4.711zM5.005 6.575a1.548 1.548 0 11-.003-3.096 1.548 1.548 0 01.003 3.096zm-1.337 9.763H6.34v-8.59H3.667v8.59zM17.668 1H2.328C1.595 1 1 1.581 1 2.298v15.403C1 18.418 1.595 19 2.328 19h15.34c.734 0 1.332-.582 1.332-1.299V2.298C19 1.581 18.402 1 17.668 1z" clipRule="evenodd" />
+                <a
+                  href="https://www.linkedin.com/in/ibadski/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <svg
+                    className="w-5 h-5 mr-2"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      fillRule="evenodd"
+                      d="M16.338 16.338H13.67V12.16c0-.995-.017-2.277-1.387-2.277-1.39 0-1.601 1.086-1.601 2.207v4.248H8.014v-8.59h2.559v1.174h.037c.356-.675 1.227-1.387 2.526-1.387 2.703 0 3.203 1.778 3.203 4.092v4.711zM5.005 6.575a1.548 1.548 0 11-.003-3.096 1.548 1.548 0 01.003 3.096zm-1.337 9.763H6.34v-8.59H3.667v8.59zM17.668 1H2.328C1.595 1 1 1.581 1 2.298v15.403C1 18.418 1.595 19 2.328 19h15.34c.734 0 1.332-.582 1.332-1.299V2.298C19 1.581 18.402 1 17.668 1z"
+                      clipRule="evenodd"
+                    />
                   </svg>
                   Ibad Ur Rahman
                 </a>
@@ -464,5 +463,5 @@ export default function SirFasTechHomepage() {
         </div>
       </footer>
     </div>
-  )
+  );
 }
