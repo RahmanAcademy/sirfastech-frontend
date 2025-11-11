@@ -132,10 +132,6 @@ export default function ProjectsShowcase({
   return (
     <section id="projects" className="py-20 px-4">
       <div className="container mx-auto">
-        <h2 className="text-4xl font-bold text-center mb-6 md:mb-10">
-          Our Projects
-        </h2>
-
         {/* mobile: scrollable row */}
         <div className="md:hidden mx-4 px-4">
           <div className="grid grid-cols-1 gap-4">
